@@ -19,20 +19,46 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
 
     {% assign anos = site.data.publicacoes.items | map: "ano" | uniq | sort | reverse %}
 
-    <!-- navegação rápida por ano -->
-    <nav class="pub-year-nav" aria-label="Navegar por ano">
+    <!-- ── Barra de busca e filtro ─────────────────────────────────────── -->
+    <div class="pub-filter-bar" role="search">
+      <div class="pub-search-wrap">
+        <svg class="pub-search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="pub-search" class="pub-search"
+               placeholder="Buscar por título, autor ou periódico…"
+               autocomplete="off" aria-label="Buscar publicações">
+      </div>
+      <div class="pub-filter-qualis" role="group" aria-label="Filtrar por Qualis">
+        <button class="pub-filter-btn is-active" data-filter="">Todos</button>
+        <button class="pub-filter-btn pub-badge--q1" data-filter="Q1">Q1</button>
+        <button class="pub-filter-btn pub-badge--q2" data-filter="Q2">Q2</button>
+        <button class="pub-filter-btn pub-badge--q3" data-filter="Q3">Q3</button>
+      </div>
+    </div>
+
+    <p class="pub-no-results" id="pub-no-results" aria-live="polite">
+      Nenhuma publicação encontrada para essa busca.
+      <button class="pub-reset" id="pub-reset">Limpar filtros</button>
+    </p>
+
+    <!-- ── Navegação rápida por ano ──────────────────────────────────────── -->
+    <nav class="pub-year-nav" aria-label="Navegar por ano" id="pub-year-nav">
       {% for ano in anos %}
       <a href="#pub-{{ ano }}" class="pub-year-btn">{{ ano }}</a>
       {% endfor %}
     </nav>
 
+    <!-- ── Grupos por ano ─────────────────────────────────────────────────── -->
     {% for ano in anos %}
     <div class="pub-year-group" id="pub-{{ ano }}">
       <div class="pub-year-label">{{ ano }}</div>
       <div class="pub-list">
         {% assign pubs_ano = site.data.publicacoes.items | where: "ano", ano %}
         {% for pub in pubs_ano %}
-        <div class="pub-item">
+        <div class="pub-item"
+             data-titulo="{{ pub.titulo | downcase | escape }}"
+             data-autores="{{ pub.autores | downcase | escape }}"
+             data-periodico="{{ pub.periodico | downcase | escape }}"
+             data-qualis="{{ pub.qualis }}">
           <div class="pub-year">{{ pub.ano }}</div>
           <div class="pub-body">
             <div class="pub-title">{{ pub.titulo }}</div>
@@ -51,3 +77,61 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
 
   </div>
 </section>
+
+<script>
+(function () {
+  var search   = document.getElementById('pub-search');
+  var resetBtn = document.getElementById('pub-reset');
+  var noRes    = document.getElementById('pub-no-results');
+  var yearNav  = document.getElementById('pub-year-nav');
+  var filterBtns = Array.from(document.querySelectorAll('.pub-filter-btn'));
+  var items    = Array.from(document.querySelectorAll('.pub-item'));
+  var groups   = Array.from(document.querySelectorAll('.pub-year-group'));
+  var activeQ  = '';
+
+  function applyFilter() {
+    var q = search ? search.value.toLowerCase().trim() : '';
+    var matched = 0;
+
+    items.forEach(function (item) {
+      var ok = (!q || item.dataset.titulo.includes(q)
+                   || item.dataset.autores.includes(q)
+                   || item.dataset.periodico.includes(q))
+            && (!activeQ || item.dataset.qualis === activeQ);
+      item.classList.toggle('pub-hidden', !ok);
+      if (ok) matched++;
+    });
+
+    groups.forEach(function (g) {
+      var any = g.querySelectorAll('.pub-item:not(.pub-hidden)').length;
+      g.classList.toggle('pub-hidden', !any);
+    });
+
+    // Esconde nav de anos durante busca (âncoras perdem sentido)
+    if (yearNav) yearNav.style.display = (q || activeQ) ? 'none' : '';
+
+    if (noRes) noRes.classList.toggle('visible', matched === 0);
+  }
+
+  function reset() {
+    if (search) search.value = '';
+    activeQ = '';
+    filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+    if (filterBtns[0]) filterBtns[0].classList.add('is-active');
+    applyFilter();
+    if (search) search.focus();
+  }
+
+  if (search)   search.addEventListener('input', applyFilter);
+  if (resetBtn) resetBtn.addEventListener('click', reset);
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      activeQ = btn.dataset.filter;
+      applyFilter();
+    });
+  });
+})();
+</script>

@@ -162,6 +162,58 @@ footer{background:var(--preto);padding:4.5rem 3rem 2rem}
 .footer-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:rgba(255,255,255,.25)}
 .footer-bottom a{color:var(--azul-mid);text-decoration:none}
 
+/* ── voltar ao topo ─────────────────────────────────────────────────────── */
+.back-to-top{position:fixed;bottom:1.75rem;right:1.75rem;width:44px;height:44px;border-radius:50%;background:var(--azul);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s,background .2s;z-index:200;box-shadow:0 4px 18px rgba(28,78,221,.3)}
+.back-to-top.visible{opacity:1;transform:translateY(0)}
+.back-to-top:hover{background:var(--azul-escuro)}
+
+/* ── animações de entrada ────────────────────────────────────────────────── */
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fade-in--visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .fade-in,.fade-in--visible{opacity:1 !important;transform:none !important;transition:none !important}
+}
+
+/* ── busca / filtro de publicações ───────────────────────────────────────── */
+.pub-filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;margin-bottom:2rem;padding:1.25rem 1.5rem;background:var(--cinza-claro);border-radius:14px;border:1px solid var(--borda)}
+.pub-search-wrap{position:relative;flex:1;min-width:200px}
+.pub-search{width:100%;padding:.6rem 1rem .6rem 2.4rem;font-family:inherit;font-size:.875rem;border:1px solid var(--borda);border-radius:100px;background:var(--branco);color:var(--preto);outline:none;transition:border-color .2s}
+.pub-search:focus{border-color:var(--azul);box-shadow:0 0 0 3px rgba(28,78,221,.08)}
+.pub-search-icon{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--cinza);pointer-events:none}
+.pub-filter-qualis{display:flex;flex-wrap:wrap;gap:.4rem}
+.pub-filter-btn{font-size:.78rem;font-weight:500;padding:.3rem .85rem;border-radius:100px;border:1px solid rgba(28,78,221,.3);background:transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s;color:var(--azul);font-family:inherit}
+.pub-filter-btn.is-active{background:var(--azul);color:#fff;border-color:var(--azul)}
+.pub-filter-btn.pub-badge--q2{color:#0a6b64;border-color:rgba(0,140,130,.3)}
+.pub-filter-btn.pub-badge--q2.is-active{background:#0a6b64;color:#fff;border-color:#0a6b64}
+.pub-filter-btn.pub-badge--q3{color:#7a5f00;border-color:rgba(160,120,0,.3)}
+.pub-filter-btn.pub-badge--q3.is-active{background:#7a5f00;color:#fff;border-color:#7a5f00}
+.pub-hidden{display:none !important}
+.pub-no-results{padding:3rem 1rem;text-align:center;color:var(--cinza);font-size:.95rem;display:none}
+.pub-no-results.visible{display:block}
+.pub-reset{background:none;border:1px solid rgba(28,78,221,.3);border-radius:100px;color:var(--azul);padding:.25rem .7rem;font-size:.8rem;cursor:pointer;margin-left:.5rem;font-family:inherit;transition:background .15s}
+.pub-reset:hover{background:var(--azul-claro)}
+
+/* esconde coluna de ano redundante dentro dos grupos de ano */
+.pub-year-group .pub-item .pub-year{display:none}
+
+/* ── impressão ───────────────────────────────────────────────────────────── */
+@media print{
+  nav,footer,.pub-filter-bar,.pub-year-nav,.back-to-top,
+  .btn-primary,.btn-outline,.linha-deco,.page-hero .hero-actions,
+  .skip-link{display:none !important}
+  body{font-size:10.5pt;color:#000;background:#fff}
+  .page-hero{padding:1rem 0;background:#fff !important;border:none !important}
+  .page-hero-title{font-size:18pt}
+  .pub-hidden,.pub-year-group.pub-hidden{display:block !important}
+  .pub-item{break-inside:avoid;border-bottom:1px solid #ddd !important;background:none !important}
+  .pub-item:hover{background:none}
+  .pub-year-group{page-break-inside:avoid}
+  .pub-year-label{border-bottom:1.5pt solid #000;font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .pub-doi::after{content:" (" attr(href) ")";font-size:.72em;color:#444}
+  .pub-badge{border:1px solid #999 !important;background:#f0f0f0 !important;color:#000 !important}
+}
+
 /* ── 404 ─────────────────────────────────────────────────────────────────── */
 .notfound-num{font-family:'Playfair Display',serif;font-size:clamp(6rem,20vw,13rem);font-weight:600;line-height:1;color:var(--azul-claro);margin-bottom:1.25rem;user-select:none;letter-spacing:-.02em}
 

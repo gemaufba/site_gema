@@ -10,6 +10,9 @@ description: "Conheça os professores e pesquisadores do GEMA, grupo de melhoram
     <div class="divider"></div>
     <h1 class="page-hero-title">Professores &amp; <em>Pesquisadores</em></h1>
     <p class="page-hero-sub">Pesquisadores dedicados à genética quantitativa, melhoramento animal e conservação de raças equinas e asininas brasileiras.</p>
+    {% assign n_doc = site.professores | where: "tipo", "docente" | size %}
+    {% assign n_est = site.professores | where: "tipo", "estudante" | size %}
+    <p class="page-hero-count">{{ n_doc }} docente{% if n_doc != 1 %}s{% endif %} · {{ n_est }} estudante{% if n_est != 1 %}s{% endif %} de pós-graduação</p>
   </div>
 </div>
 
