@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notícias — GEMA · EMVZ/UFBA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo/logo-gema.svg" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
-  </a>
-  <ul class="nav-links">
-    <li><a href="professores.html">Professores</a></li>
-    <li><a href="publicacoes.html">Publicações</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="noticias.html" class="ativa">Notícias</a></li>
-  </ul>
-</nav>
+---
+layout: default
+title: "Notícias"
+description: "Últimas notícias e atualizações do GEMA — projetos, publicações e eventos"
+---
 
 <div class="page-hero">
   <div class="container">
@@ -35,28 +17,26 @@
   <div class="container">
     <div class="section-label">Destaque</div>
     <div class="divider"></div>
+    {% assign destaque = site.data.noticias.items | where: "destaque", true | first %}
+    {% assign secundarias = site.data.noticias.items | where: "destaque", false | limit: 3 %}
     <div class="noticias-grid">
+      {% if destaque %}
       <div class="noticia-destaque">
         <div>
-          <div class="noticia-data nd-data">Maio · 2025</div>
-          <h2 class="noticia-titulo">Artigo sobre herdabilidade do Pêga aceito em periódico internacional</h2>
-          <p class="noticia-texto">O trabalho de estimação de parâmetros genéticos para escores de andamento, membros e paleta no jumento Pêga, via inferência bayesiana com BLUPF90+, foi aceito para publicação na revista Livestock Science. Um dos primeiros estudos genéticos de larga escala com a raça no Brasil.</p>
+          <div class="noticia-data nd-data">{{ destaque.data }}</div>
+          <h2 class="noticia-titulo">{{ destaque.titulo }}</h2>
+          <p class="noticia-texto">{{ destaque.texto }}</p>
         </div>
-        <a href="publicacoes.html" class="noticia-link-btn">Ver publicação →</a>
+        {% if destaque.link %}<a href="{{ destaque.link }}" class="noticia-link-btn">Ler mais →</a>{% endif %}
       </div>
+      {% endif %}
       <div class="noticias-lista">
+        {% for noticia in secundarias %}
         <div class="noticia-mini">
-          <div class="noticia-data nm-data">Abril · 2025</div>
-          <h4 class="nm-titulo">Apresentação no SBMA 2025 — Salvador, BA</h4>
+          <div class="noticia-data nm-data">{{ noticia.data }}</div>
+          <h4 class="nm-titulo">{{ noticia.titulo }}</h4>
         </div>
-        <div class="noticia-mini">
-          <div class="noticia-data nm-data">Março · 2025</div>
-          <h4 class="nm-titulo">Novo módulo de genômica na trilha aberta do GEMA</h4>
-        </div>
-        <div class="noticia-mini">
-          <div class="noticia-data nm-data">Jan · 2025</div>
-          <h4 class="nm-titulo">Início do projeto de caracterização genômica do Campolina</h4>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -64,87 +44,18 @@
 
 <section style="background:var(--cinza-claro)">
   <div class="container">
-    <div class="section-label">2025</div>
+    <div class="section-label">Arquivo</div>
     <div class="divider"></div>
     <h2 class="section-title">Todas as Notícias</h2>
     <div class="noticias-all">
-
+      {% for noticia in site.data.noticias.items %}
       <div class="noticia-card">
-        <span class="noticia-data">Abril · 2025</span>
-        <h3 class="noticia-titulo">SBMA 2025: GEMA apresenta três trabalhos em Salvador</h3>
-        <p>O grupo apresentou trabalhos sobre herdabilidade de escores morfológicos, diversidade genética em asininos e seleção genômica no Simpósio Brasileiro de Melhoramento Animal, realizado em Salvador, BA.</p>
-        <a href="#">Ler mais →</a>
+        <span class="noticia-data">{{ noticia.data }}</span>
+        <h3 class="noticia-titulo">{{ noticia.titulo }}</h3>
+        <p>{{ noticia.texto }}</p>
+        {% if noticia.link %}<a href="{{ noticia.link }}">Ler mais →</a>{% endif %}
       </div>
-
-      <div class="noticia-card">
-        <span class="noticia-data">Março · 2025</span>
-        <h3 class="noticia-titulo">Novo módulo de genômica disponível no curso aberto</h3>
-        <p>O módulo "Introdução à Genômica Aplicada" foi adicionado ao curso aberto do GEMA no GitHub Pages. O conteúdo abrange análise de SNP, GWAS e seleção genômica com exemplos práticos em R.</p>
-        <a href="https://glebstrauss.github.io/gema/" target="_blank">Acessar curso →</a>
-      </div>
-
-      <div class="noticia-card">
-        <span class="noticia-data">Janeiro · 2025</span>
-        <h3 class="noticia-titulo">Novo projeto: caracterização genômica do Campolina</h3>
-        <p>O GEMA iniciou parceria com criadores de cavalos Campolina para caracterização genômica da raça, com foco em diversidade alélica, endogamia e parâmetros genéticos para características de andamento.</p>
-        <a href="#">Ler mais →</a>
-      </div>
-
-      <div class="noticia-card">
-        <span class="noticia-data">Dezembro · 2024</span>
-        <h3 class="noticia-titulo">Artigo sobre morfometria do Pêga publicado no ABMVZ</h3>
-        <p>O artigo "Morphometric characterization of Pêga donkeys using principal component analysis" foi publicado no Arquivo Brasileiro de Medicina Veterinária e Zootecnia, contribuindo para o conhecimento da raça.</p>
-        <a href="publicacoes.html">Ver publicação →</a>
-      </div>
-
-      <div class="noticia-card">
-        <span class="noticia-data">Outubro · 2024</span>
-        <h3 class="noticia-titulo">GEMA premiado no ZOOTEC 2024</h3>
-        <p>O trabalho sobre herdabilidade de escores de andamento no jumento Pêga recebeu o prêmio de Melhor Trabalho em Genética Animal no Congresso Brasileiro de Zootecnia, em Fortaleza, CE.</p>
-        <a href="premios.html">Ver prêmios →</a>
-      </div>
-
-      <div class="noticia-card">
-        <span class="noticia-data">Agosto · 2024</span>
-        <h3 class="noticia-titulo">Parceria com ABCJP para banco de dados genéticos</h3>
-        <p>O grupo firmou parceria com a Associação Brasileira dos Criadores do Jumento Pêga para construção de um banco de dados genéticos e fenotípicos visando programas de avaliação genética da raça.</p>
-        <a href="#">Ler mais →</a>
-      </div>
-
+      {% endfor %}
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <img class="footer-logo-svg" src="logo/logo-gema.svg" alt="GEMA">
-      <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links">
-        <li><a href="professores.html">Professores</a></li>
-        <li><a href="publicacoes.html">Publicações</a></li>
-        <li><a href="premios.html">Prêmios</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Recursos</div>
-      <ul class="footer-links">
-        <li><a href="https://glebstrauss.github.io/gema/" target="_blank">Curso aberto</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema" target="_blank">GitHub</a></li>
-        <li><a href="https://www.ufba.br" target="_blank">UFBA</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema/issues/new" target="_blank">Contato</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 GEMA · EMVZ/UFBA</span>
-    <span><a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
-  </div>
-</footer>
-
-</body>
-</html>

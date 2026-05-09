@@ -1,0 +1,21 @@
+<div class="prof-card">
+  {% if include.prof.foto %}
+    <img src="{{ include.prof.foto | relative_url }}"
+         alt="Foto de {{ include.prof.nome }}"
+         loading="lazy"
+         style="width:52px;height:52px;border-radius:50%;object-fit:cover;margin-bottom:1rem">
+  {% else %}
+    <div class="prof-avatar">{{ include.prof.avatar }}</div>
+  {% endif %}
+  <div class="prof-nome">{{ include.prof.nome }}</div>
+  <div class="prof-cargo">{{ include.prof.cargo }}</div>
+  <p class="prof-desc">{{ include.prof.descricao }}</p>
+  <div class="prof-tags">
+    {% for tag in include.prof.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% if include.prof.lattes %}
+    <a href="{{ include.prof.lattes }}" target="_blank" rel="noopener" class="pub-doi" style="margin-top:.75rem">↗ Lattes</a>
+  {% endif %}
+</div>

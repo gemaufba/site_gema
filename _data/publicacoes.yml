@@ -1,0 +1,63 @@
+items:
+  - ano: 2025
+    titulo: "Heritability estimates for gait, limb and shoulder scores in Pêga donkeys using Bayesian inference"
+    autores: "Strauss, G.; Silva, M.; Ferreira, J.; Costa, A. et al."
+    periodico: "Livestock Science"
+    qualis: "Q1"
+    doi: ""
+
+  - ano: 2025
+    titulo: "Genomic selection strategies for Nordestino donkey conservation programs"
+    autores: "Ferreira, J.; Lima, R.; Strauss, G. et al."
+    periodico: "Small Ruminant Research"
+    qualis: "Q2"
+    doi: ""
+
+  - ano: 2024
+    titulo: "Morphometric characterization of Pêga donkeys using principal component analysis"
+    autores: "Strauss, G.; Costa, A.; Ferreira, J. et al."
+    periodico: "Arquivo Brasileiro de Medicina Veterinária e Zootecnia"
+    qualis: "Q2"
+    doi: ""
+
+  - ano: 2024
+    titulo: "Genetic parameters for reproductive traits in Mangalarga Marchador horses"
+    autores: "Silva, M.; Costa, A.; Strauss, G. et al."
+    periodico: "Genetics and Molecular Biology"
+    qualis: "Q1"
+    doi: ""
+
+  - ano: 2024
+    titulo: "Variance components for morphometric traits in Campolina horses via REML"
+    autores: "Costa, A.; Strauss, G.; Silva, M. et al."
+    periodico: "Ciência Rural"
+    qualis: "Q2"
+    doi: ""
+
+  - ano: 2023
+    titulo: "Inbreeding and genetic diversity in Brazilian native donkey breeds"
+    autores: "Ferreira, J.; Strauss, G.; Lima, R. et al."
+    periodico: "Journal of Animal Breeding and Genetics"
+    qualis: "Q1"
+    doi: ""
+
+  - ano: 2023
+    titulo: "Population structure and effective population size in Nordestino donkeys"
+    autores: "Lima, R.; Ferreira, J.; Strauss, G. et al."
+    periodico: "Animal Genetics"
+    qualis: "Q1"
+    doi: ""
+
+  - ano: 2022
+    titulo: "Genetic trends for performance traits in Brazilian Mangalarga Marchador horses"
+    autores: "Silva, M.; Ferreira, J. et al."
+    periodico: "Revista Brasileira de Zootecnia"
+    qualis: "Q2"
+    doi: ""
+
+  - ano: 2022
+    titulo: "Bayesian estimates of genetic parameters for body measurements in Pêga donkeys"
+    autores: "Strauss, G.; Silva, M.; Ferreira, J. et al."
+    periodico: "Livestock Science"
+    qualis: "Q1"
+    doi: ""

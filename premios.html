@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prêmios — GEMA · EMVZ/UFBA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo/logo-gema.svg" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
-  </a>
-  <ul class="nav-links">
-    <li><a href="professores.html">Professores</a></li>
-    <li><a href="publicacoes.html">Publicações</a></li>
-    <li><a href="premios.html" class="ativa">Prêmios</a></li>
-    <li><a href="noticias.html">Notícias</a></li>
-  </ul>
-</nav>
+---
+layout: default
+title: "Prêmios"
+description: "Prêmios e distinções conquistados pelo GEMA em eventos científicos nacionais e internacionais"
+---
 
 <div class="page-hero" style="background:var(--preto);border-bottom:1px solid rgba(28,78,221,.2)">
   <div class="container">
@@ -31,100 +13,25 @@
   </div>
 </div>
 
-<section style="background:var(--preto)">
+{% assign anos_premios = site.data.premios.items | map: "ano" | uniq | sort | reverse %}
+{% for ano in anos_premios %}
+  {% assign premios_ano = site.data.premios.items | where: "ano", ano %}
+  {% assign bg = "var(--preto)" %}
+  {% if forloop.even %}{% assign bg = "#111116" %}{% endif %}
+<section style="background:{{ bg }}">
   <div class="container">
-    <div class="section-label" style="color:var(--azul-mid)">2024 – 2025</div>
+    <div class="section-label" style="color:var(--azul-mid)">{{ ano }}</div>
     <div class="divider" style="background:var(--azul-mid)"></div>
-    <h2 class="section-title" style="color:var(--branco)">Prêmios Recentes</h2>
     <div class="premio-grid">
-
+      {% for premio in premios_ano %}
       <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">🏆</div><div class="premio-ano">2024</div></div>
-        <div class="premio-nome">Melhor Trabalho em Genética Animal</div>
-        <div class="premio-entidade">Congresso Brasileiro de Zootecnia (ZOOTEC)</div>
-        <p class="premio-desc">Herdabilidade de escores de andamento no jumento Pêga via inferência bayesiana com BLUPF90+. Destaque entre mais de 200 trabalhos submetidos na área de genética.</p>
+        <div class="premio-topo"><div class="premio-icon">{{ premio.icone }}</div><div class="premio-ano">{{ premio.ano }}</div></div>
+        <div class="premio-nome">{{ premio.nome }}</div>
+        <div class="premio-entidade">{{ premio.entidade }}</div>
+        <p class="premio-desc">{{ premio.descricao }}</p>
       </div>
-
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">🎖️</div><div class="premio-ano">2024</div></div>
-        <div class="premio-nome">Destaque em Produção Científica</div>
-        <div class="premio-entidade">EMVZ · UFBA</div>
-        <p class="premio-desc">Reconhecimento pela publicação em periódicos de alto impacto e pela contribuição à conservação de raças nativas equinas e asininas brasileiras.</p>
-      </div>
-
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">📌</div><div class="premio-ano">2023</div></div>
-        <div class="premio-nome">Menção Honrosa — Pôster</div>
-        <div class="premio-entidade">Simpósio Brasileiro de Melhoramento Animal (SBMA)</div>
-        <p class="premio-desc">Diversidade genética e endogamia em raças asininas nativas do Nordeste brasileiro. Trabalho premiado na categoria Recursos Genéticos Animais.</p>
-      </div>
-
+      {% endfor %}
     </div>
   </div>
 </section>
-
-<section style="background:#111116">
-  <div class="container">
-    <div class="section-label" style="color:var(--azul-mid)">2021 – 2022</div>
-    <div class="divider" style="background:var(--azul-mid)"></div>
-    <h2 class="section-title" style="color:var(--branco)">Prêmios Anteriores</h2>
-    <div class="premio-grid">
-
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">🥇</div><div class="premio-ano">2022</div></div>
-        <div class="premio-nome">Melhor Apresentação Oral</div>
-        <div class="premio-entidade">Reunião Anual da SBG</div>
-        <p class="premio-desc">Estimativas bayesianas de parâmetros genéticos para medidas corporais no jumento Pêga. Sociedade Brasileira de Genética, área de Genética de Populações e Evolução.</p>
-      </div>
-
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">📜</div><div class="premio-ano">2021</div></div>
-        <div class="premio-nome">Bolsa CNPq — Produtividade em Pesquisa</div>
-        <div class="premio-entidade">CNPq · Brasil</div>
-        <p class="premio-desc">Concessão de bolsa de produtividade em pesquisa para desenvolvimento de metodologias de avaliação genômica aplicada a equídeos localmente adaptados.</p>
-      </div>
-
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">🎗️</div><div class="premio-ano">2021</div></div>
-        <div class="premio-nome">Destaque PPGZ/UFBA</div>
-        <div class="premio-entidade">Programa de Pós-Graduação em Zootecnia · UFBA</div>
-        <p class="premio-desc">Prêmio concedido à dissertação com maior impacto científico e social defendida no período, na linha de melhoramento e reprodução animal.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <img class="footer-logo-svg" src="logo/logo-gema.svg" alt="GEMA">
-      <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links">
-        <li><a href="professores.html">Professores</a></li>
-        <li><a href="publicacoes.html">Publicações</a></li>
-        <li><a href="premios.html">Prêmios</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Recursos</div>
-      <ul class="footer-links">
-        <li><a href="https://glebstrauss.github.io/gema/" target="_blank">Curso aberto</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema" target="_blank">GitHub</a></li>
-        <li><a href="https://www.ufba.br" target="_blank">UFBA</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema/issues/new" target="_blank">Contato</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 GEMA · EMVZ/UFBA</span>
-    <span><a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
-  </div>
-</footer>
-
-</body>
-</html>
+{% endfor %}

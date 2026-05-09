@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} — {{ site.full_title }}{% else %}{{ site.full_title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}{{ site.full_title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<nav>
+  <a href="{{ '/' | relative_url }}" class="nav-logo">
+    <img src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
+  </a>
+  <ul class="nav-links">
+    <li><a href="{{ '/professores.html' | relative_url }}"{% if page.url contains 'professores' %} class="ativa"{% endif %}>Professores</a></li>
+    <li><a href="{{ '/publicacoes.html' | relative_url }}"{% if page.url contains 'publicacoes' %} class="ativa"{% endif %}>Publicações</a></li>
+    <li><a href="{{ '/premios.html' | relative_url }}"{% if page.url contains 'premios' %} class="ativa"{% endif %}>Prêmios</a></li>
+    <li><a href="{{ '/noticias.html' | relative_url }}"{% if page.url contains 'noticias' %} class="ativa"{% endif %}>Notícias</a></li>
+  </ul>
+</nav>
+
+{{ content }}
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <img class="footer-logo-svg" src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA">
+      <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navegação</div>
+      <ul class="footer-links">
+        <li><a href="{{ '/professores.html' | relative_url }}">Professores</a></li>
+        <li><a href="{{ '/publicacoes.html' | relative_url }}">Publicações</a></li>
+        <li><a href="{{ '/premios.html' | relative_url }}">Prêmios</a></li>
+        <li><a href="{{ '/noticias.html' | relative_url }}">Notícias</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Recursos</div>
+      <ul class="footer-links">
+        <li><a href="https://glebstrauss.github.io/gema/" target="_blank" rel="noopener">Curso aberto</a></li>
+        <li><a href="https://github.com/Glebstrauss/gema" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.ufba.br" target="_blank" rel="noopener">UFBA</a></li>
+        <li><a href="https://github.com/Glebstrauss/gema/issues/new" target="_blank" rel="noopener">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 GEMA · EMVZ/UFBA</span>
+    <span><a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

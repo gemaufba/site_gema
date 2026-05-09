@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professores — GEMA · EMVZ/UFBA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo/logo-gema.svg" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
-  </a>
-  <ul class="nav-links">
-    <li><a href="professores.html" class="ativa">Professores</a></li>
-    <li><a href="publicacoes.html">Publicações</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="noticias.html">Notícias</a></li>
-  </ul>
-</nav>
+---
+layout: default
+title: "Professores"
+description: "Conheça os professores e pesquisadores do GEMA, grupo de melhoramento animal da EMVZ/UFBA"
+---
 
 <div class="page-hero">
   <div class="container">
@@ -37,31 +19,10 @@
     <div class="divider"></div>
     <h2 class="section-title">Corpo Docente</h2>
     <div class="prof-grid">
-
-      <div class="prof-card">
-        <div class="prof-avatar">NB</div>
-        <div class="prof-nome">Prof. Dr. Nome Sobrenome</div>
-        <div class="prof-cargo">Coordenador · EMVZ/UFBA</div>
-        <p class="prof-desc">Pesquisa em avaliação genética e genômica de equídeos. Experiência em BLUP, modelos mistos e genômica aplicada a raças nativas. Orientador do PPGZ/UFBA.</p>
-        <div class="prof-tags"><span class="tag">Genômica</span><span class="tag">BLUP</span><span class="tag">Equídeos</span><span class="tag">BLUPF90+</span></div>
-      </div>
-
-      <div class="prof-card">
-        <div class="prof-avatar">MS</div>
-        <div class="prof-nome">Prof. Dr. Maria Silva</div>
-        <div class="prof-cargo">Pesquisadora · EMVZ/UFBA</div>
-        <p class="prof-desc">Especialista em herdabilidade e correlações genéticas para características de conformação e andamento em raças nordestinas.</p>
-        <div class="prof-tags"><span class="tag">Herdabilidade</span><span class="tag">Morfometria</span><span class="tag">Pêga</span><span class="tag">Bayesiana</span></div>
-      </div>
-
-      <div class="prof-card">
-        <div class="prof-avatar">JF</div>
-        <div class="prof-nome">Prof. Dr. João Ferreira</div>
-        <div class="prof-cargo">Pesquisador · EMVZ/UFBA</div>
-        <p class="prof-desc">Foco em análise de pedigree, parentesco e conservação genética de raças ameaçadas no semiárido brasileiro.</p>
-        <div class="prof-tags"><span class="tag">Pedigree</span><span class="tag">Conservação</span><span class="tag">SNP</span><span class="tag">Endogamia</span></div>
-      </div>
-
+      {% assign docentes = site.professores | where: "tipo", "docente" | sort: "ordem" %}
+      {% for prof in docentes %}
+        {% include prof-card.html prof=prof %}
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -72,31 +33,10 @@
     <div class="divider"></div>
     <h2 class="section-title">Estudantes</h2>
     <div class="prof-grid">
-
-      <div class="prof-card">
-        <div class="prof-avatar">GS</div>
-        <div class="prof-nome">M.Sc. Gleb Strauss</div>
-        <div class="prof-cargo">Mestrando · PPGZ/UFBA</div>
-        <p class="prof-desc">Caracterização morfométrica e herdabilidade do jumento Pêga. Desenvolvimento de pipelines em R para genética quantitativa, análise bayesiana e genômica.</p>
-        <div class="prof-tags"><span class="tag">PCA</span><span class="tag">Bayesiana</span><span class="tag">Jumento Pêga</span><span class="tag">R</span></div>
-      </div>
-
-      <div class="prof-card">
-        <div class="prof-avatar">AC</div>
-        <div class="prof-nome">Ana Costa</div>
-        <div class="prof-cargo">Mestranda · PPGZ/UFBA</div>
-        <p class="prof-desc">Parâmetros genéticos para características reprodutivas em equinos da raça Mangalarga Marchador. Modelagem com BLUPF90+.</p>
-        <div class="prof-tags"><span class="tag">Reprodução</span><span class="tag">Mangalarga</span><span class="tag">Modelos Mistos</span></div>
-      </div>
-
-      <div class="prof-card">
-        <div class="prof-avatar">RL</div>
-        <div class="prof-nome">Rodrigo Lima</div>
-        <div class="prof-cargo">Doutorando · PPGZ/UFBA</div>
-        <p class="prof-desc">Diversidade genética e estrutura populacional de raças asininas nativas. Análise de SNP e marcadores microssatélites.</p>
-        <div class="prof-tags"><span class="tag">SNP</span><span class="tag">Diversidade</span><span class="tag">Asininos</span></div>
-      </div>
-
+      {% assign estudantes = site.professores | where: "tipo", "estudante" | sort: "ordem" %}
+      {% for prof in estudantes %}
+        {% include prof-card.html prof=prof %}
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -126,37 +66,3 @@
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <img class="footer-logo-svg" src="logo/logo-gema.svg" alt="GEMA">
-      <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links">
-        <li><a href="professores.html">Professores</a></li>
-        <li><a href="publicacoes.html">Publicações</a></li>
-        <li><a href="premios.html">Prêmios</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Recursos</div>
-      <ul class="footer-links">
-        <li><a href="https://glebstrauss.github.io/gema/" target="_blank">Curso aberto</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema" target="_blank">GitHub</a></li>
-        <li><a href="https://www.ufba.br" target="_blank">UFBA</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema/issues/new" target="_blank">Contato</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 GEMA · EMVZ/UFBA</span>
-    <span><a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
-  </div>
-</footer>
-
-</body>
-</html>

@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publicações — GEMA · EMVZ/UFBA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo/logo-gema.svg" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
-  </a>
-  <ul class="nav-links">
-    <li><a href="professores.html">Professores</a></li>
-    <li><a href="publicacoes.html" class="ativa">Publicações</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="noticias.html">Notícias</a></li>
-  </ul>
-</nav>
+---
+layout: default
+title: "Publicações"
+description: "Produção científica do GEMA em genética quantitativa, genômica e melhoramento de equídeos brasileiros"
+---
 
 <div class="page-hero">
   <div class="container">
@@ -33,145 +15,25 @@
 
 <section style="background:var(--branco)">
   <div class="container">
-
+    {% assign anos = site.data.publicacoes.items | map: "ano" | uniq | sort | reverse %}
+    {% for ano in anos %}
     <div class="pub-year-group">
-      <div class="pub-year-label">2025</div>
+      <div class="pub-year-label">{{ ano }}</div>
       <div class="pub-list">
+        {% assign pubs_ano = site.data.publicacoes.items | where: "ano", ano %}
+        {% for pub in pubs_ano %}
         <div class="pub-item">
-          <div class="pub-year">2025</div>
+          <div class="pub-year">{{ pub.ano }}</div>
           <div class="pub-body">
-            <div class="pub-title">Heritability estimates for gait, limb and shoulder scores in Pêga donkeys using Bayesian inference</div>
-            <div class="pub-authors">Strauss, G.; Silva, M.; Ferreira, J.; Costa, A. et al.</div>
-            <div class="pub-journal">Livestock Science <span class="pub-badge">Q1</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
+            <div class="pub-title">{{ pub.titulo }}</div>
+            <div class="pub-authors">{{ pub.autores }}</div>
+            <div class="pub-journal">{{ pub.periodico }}{% if pub.qualis %} <span class="pub-badge">{{ pub.qualis }}</span>{% endif %}</div>
+            {% if pub.doi %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% else %}<a href="#" class="pub-doi">↗ DOI (em breve)</a>{% endif %}
           </div>
         </div>
-        <div class="pub-item">
-          <div class="pub-year">2025</div>
-          <div class="pub-body">
-            <div class="pub-title">Genomic selection strategies for Nordestino donkey conservation programs</div>
-            <div class="pub-authors">Ferreira, J.; Lima, R.; Strauss, G. et al.</div>
-            <div class="pub-journal">Small Ruminant Research <span class="pub-badge">Q2</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-
-    <div class="pub-year-group">
-      <div class="pub-year-label">2024</div>
-      <div class="pub-list">
-        <div class="pub-item">
-          <div class="pub-year">2024</div>
-          <div class="pub-body">
-            <div class="pub-title">Morphometric characterization of Pêga donkeys using principal component analysis</div>
-            <div class="pub-authors">Strauss, G.; Costa, A.; Ferreira, J. et al.</div>
-            <div class="pub-journal">Arquivo Brasileiro de Medicina Veterinária e Zootecnia <span class="pub-badge">Q2</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-        <div class="pub-item">
-          <div class="pub-year">2024</div>
-          <div class="pub-body">
-            <div class="pub-title">Genetic parameters for reproductive traits in Mangalarga Marchador horses</div>
-            <div class="pub-authors">Silva, M.; Costa, A.; Strauss, G. et al.</div>
-            <div class="pub-journal">Genetics and Molecular Biology <span class="pub-badge">Q1</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-        <div class="pub-item">
-          <div class="pub-year">2024</div>
-          <div class="pub-body">
-            <div class="pub-title">Variance components for morphometric traits in Campolina horses via REML</div>
-            <div class="pub-authors">Costa, A.; Strauss, G.; Silva, M. et al.</div>
-            <div class="pub-journal">Ciência Rural <span class="pub-badge">Q2</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-year-group">
-      <div class="pub-year-label">2023</div>
-      <div class="pub-list">
-        <div class="pub-item">
-          <div class="pub-year">2023</div>
-          <div class="pub-body">
-            <div class="pub-title">Inbreeding and genetic diversity in Brazilian native donkey breeds</div>
-            <div class="pub-authors">Ferreira, J.; Strauss, G.; Lima, R. et al.</div>
-            <div class="pub-journal">Journal of Animal Breeding and Genetics <span class="pub-badge">Q1</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-        <div class="pub-item">
-          <div class="pub-year">2023</div>
-          <div class="pub-body">
-            <div class="pub-title">Population structure and effective population size in Nordestino donkeys</div>
-            <div class="pub-authors">Lima, R.; Ferreira, J.; Strauss, G. et al.</div>
-            <div class="pub-journal">Animal Genetics <span class="pub-badge">Q1</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-year-group">
-      <div class="pub-year-label">2022</div>
-      <div class="pub-list">
-        <div class="pub-item">
-          <div class="pub-year">2022</div>
-          <div class="pub-body">
-            <div class="pub-title">Genetic trends for performance traits in Brazilian Mangalarga Marchador horses</div>
-            <div class="pub-authors">Silva, M.; Ferreira, J. et al.</div>
-            <div class="pub-journal">Revista Brasileira de Zootecnia <span class="pub-badge">Q2</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-        <div class="pub-item">
-          <div class="pub-year">2022</div>
-          <div class="pub-body">
-            <div class="pub-title">Bayesian estimates of genetic parameters for body measurements in Pêga donkeys</div>
-            <div class="pub-authors">Strauss, G.; Silva, M.; Ferreira, J. et al.</div>
-            <div class="pub-journal">Livestock Science <span class="pub-badge">Q1</span></div>
-            <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    {% endfor %}
   </div>
 </section>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <img class="footer-logo-svg" src="logo/logo-gema.svg" alt="GEMA">
-      <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links">
-        <li><a href="professores.html">Professores</a></li>
-        <li><a href="publicacoes.html">Publicações</a></li>
-        <li><a href="premios.html">Prêmios</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Recursos</div>
-      <ul class="footer-links">
-        <li><a href="https://glebstrauss.github.io/gema/" target="_blank">Curso aberto</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema" target="_blank">GitHub</a></li>
-        <li><a href="https://www.ufba.br" target="_blank">UFBA</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema/issues/new" target="_blank">Contato</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 GEMA · EMVZ/UFBA</span>
-    <span><a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
-  </div>
-</footer>
-
-</body>
-</html>

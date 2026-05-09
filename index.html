@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEMA — Grupo de Estudos em Melhoramento Animal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav>
-  <a href="#inicio" class="nav-logo">
-    <img src="logo/logo-gema.svg" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
-  </a>
-  <ul class="nav-links">
-    <li><a href="professores.html">Professores</a></li>
-    <li><a href="publicacoes.html">Publicações</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="noticias.html">Notícias</a></li>
-  </ul>
-</nav>
+---
+layout: default
+title: "GEMA — Grupo de Estudos em Melhoramento Animal"
+description: "Grupo de pesquisa em genética quantitativa, genômica e melhoramento de equídeos brasileiros. EMVZ · UFBA · Salvador, BA"
+---
 
 <div style="max-width:1200px;margin:0 auto">
 <section id="inicio" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:8rem 3rem 4rem;min-height:100vh">
@@ -29,19 +11,19 @@
     <h1 class="hero-title">Genética &amp;<br><em>Melhoramento</em><br>Animal Aplicados</h1>
     <p class="hero-sub">Grupo de pesquisa dedicado à genética quantitativa, avaliação genômica e conservação de raças de equídeos brasileiros.</p>
     <div class="hero-actions">
-      <a href="#publicacoes" class="btn-primary">Ver publicações →</a>
-      <a href="https://glebstrauss.github.io/gema/" target="_blank" class="btn-outline">Curso aberto ↗</a>
+      <a href="{{ '/publicacoes.html' | relative_url }}" class="btn-primary">Ver publicações →</a>
+      <a href="https://glebstrauss.github.io/gema/" target="_blank" rel="noopener" class="btn-outline">Curso aberto ↗</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-num">12+</div><div class="stat-label">Publicações</div></div>
+      <div><div class="stat-num">{{ site.data.publicacoes.items | size }}+</div><div class="stat-label">Publicações</div></div>
       <div><div class="stat-num">3</div><div class="stat-label">Linhas de pesquisa</div></div>
-      <div><div class="stat-num">2+</div><div class="stat-label">Prêmios</div></div>
+      <div><div class="stat-num">{{ site.data.premios.items | size }}+</div><div class="stat-label">Prêmios</div></div>
     </div>
   </div>
   <div class="hero-visual">
     <div class="hero-logo-wrap">
       <div class="hero-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <img class="hero-logo-svg" src="logo/logo-gema.svg" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
+      <img class="hero-logo-svg" src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
     </div>
   </div>
 </section>
@@ -68,184 +50,103 @@
   </div>
 </div>
 
-<section id="professores">
+<section id="professores" style="background:var(--cinza-claro)">
   <div class="container">
     <div class="section-label">Equipe</div>
     <div class="divider"></div>
     <h2 class="section-title">Professores &amp; Pesquisadores</h2>
     <p class="section-desc">Pesquisadores dedicados à genética quantitativa, melhoramento animal e genômica de raças brasileiras.</p>
     <div class="prof-grid">
-      <div class="prof-card">
-        <div class="prof-avatar">NB</div>
-        <div class="prof-nome">Prof. Dr. Nome Sobrenome</div>
-        <div class="prof-cargo">Coordenador · EMVZ/UFBA</div>
-        <p class="prof-desc">Pesquisa em avaliação genética e genômica de equídeos. Experiência em BLUP, modelos mistos e genômica aplicada a raças nativas.</p>
-        <div class="prof-tags"><span class="tag">Genômica</span><span class="tag">BLUP</span><span class="tag">Equídeos</span></div>
-      </div>
-      <div class="prof-card">
-        <div class="prof-avatar">MS</div>
-        <div class="prof-nome">Prof. Dr. Maria Silva</div>
-        <div class="prof-cargo">Pesquisadora · EMVZ/UFBA</div>
-        <p class="prof-desc">Especialista em herdabilidade e correlações genéticas para características de conformação e andamento em raças nordestinas.</p>
-        <div class="prof-tags"><span class="tag">Herdabilidade</span><span class="tag">Morfometria</span><span class="tag">Pêga</span></div>
-      </div>
-      <div class="prof-card">
-        <div class="prof-avatar">JF</div>
-        <div class="prof-nome">Prof. Dr. João Ferreira</div>
-        <div class="prof-cargo">Pesquisador · EMVZ/UFBA</div>
-        <p class="prof-desc">Foco em análise de pedigree, parentesco e conservação genética de raças ameaçadas no semiárido brasileiro.</p>
-        <div class="prof-tags"><span class="tag">Pedigree</span><span class="tag">Conservação</span><span class="tag">SNP</span></div>
-      </div>
-      <div class="prof-card">
-        <div class="prof-avatar">GS</div>
-        <div class="prof-nome">M.Sc. Gleb Strauss</div>
-        <div class="prof-cargo">Mestrando · PPGZ/UFBA</div>
-        <p class="prof-desc">Caracterização morfométrica e herdabilidade do jumento Pêga. Pipelines em R para genética quantitativa e genômica.</p>
-        <div class="prof-tags"><span class="tag">PCA</span><span class="tag">Bayesiana</span><span class="tag">Jumento Pêga</span></div>
-      </div>
+      {% assign todos = site.professores | sort: "ordem" | limit: 4 %}
+      {% for prof in todos %}
+        {% include prof-card.html prof=prof %}
+      {% endfor %}
+    </div>
+    <div style="margin-top:2rem">
+      <a href="{{ '/professores.html' | relative_url }}" class="btn-outline">Ver toda a equipe →</a>
     </div>
   </div>
 </section>
 
-<section id="publicacoes">
+<section id="publicacoes" style="background:var(--branco)">
   <div class="container">
     <div class="section-label">Produção Científica</div>
     <div class="divider"></div>
     <h2 class="section-title">Publicações Recentes</h2>
     <p class="section-desc">Artigos em periódicos nacionais e internacionais em genética quantitativa e melhoramento de equídeos.</p>
     <div class="pub-list">
+      {% assign pubs = site.data.publicacoes.items | sort: "ano" | reverse | limit: 4 %}
+      {% for pub in pubs %}
       <div class="pub-item">
-        <div class="pub-year">2025</div>
+        <div class="pub-year">{{ pub.ano }}</div>
         <div class="pub-body">
-          <div class="pub-title">Heritability estimates for gait, limb and shoulder scores in Pêga donkeys using Bayesian inference</div>
-          <div class="pub-authors">Strauss, G.; Silva, M.; Ferreira, J. et al.</div>
-          <div class="pub-journal">Livestock Science <span class="pub-badge">Q1</span></div>
-          <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
+          <div class="pub-title">{{ pub.titulo }}</div>
+          <div class="pub-authors">{{ pub.autores }}</div>
+          <div class="pub-journal">{{ pub.periodico }}{% if pub.qualis %} <span class="pub-badge">{{ pub.qualis }}</span>{% endif %}</div>
+          {% if pub.doi %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% else %}<a href="#" class="pub-doi">↗ DOI (em breve)</a>{% endif %}
         </div>
       </div>
-      <div class="pub-item">
-        <div class="pub-year">2024</div>
-        <div class="pub-body">
-          <div class="pub-title">Morphometric characterization of Pêga donkeys using principal component analysis</div>
-          <div class="pub-authors">Strauss, G.; Costa, A.; Ferreira, J. et al.</div>
-          <div class="pub-journal">Arquivo Brasileiro de Medicina Veterinária e Zootecnia <span class="pub-badge">Q2</span></div>
-          <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-year">2024</div>
-        <div class="pub-body">
-          <div class="pub-title">Genetic parameters for reproductive traits in Mangalarga Marchador horses</div>
-          <div class="pub-authors">Silva, M.; Strauss, G. et al.</div>
-          <div class="pub-journal">Genetics and Molecular Biology <span class="pub-badge">Q1</span></div>
-          <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-year">2023</div>
-        <div class="pub-body">
-          <div class="pub-title">Inbreeding and genetic diversity in Brazilian native donkey breeds</div>
-          <div class="pub-authors">Ferreira, J.; Strauss, G. et al.</div>
-          <div class="pub-journal">Journal of Animal Breeding and Genetics</div>
-          <a href="#" class="pub-doi">↗ DOI (adicionar link)</a>
-        </div>
-      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-top:2rem">
+      <a href="{{ '/publicacoes.html' | relative_url }}" class="btn-outline">Ver todas as publicações →</a>
     </div>
   </div>
 </section>
 
-<section id="premios">
+<section id="premios" style="background:var(--preto)">
   <div class="container">
-    <div class="section-label">Reconhecimento</div>
-    <div class="divider"></div>
-    <h2 class="section-title">Prêmios &amp; Distinções</h2>
-    <p class="section-desc">Reconhecimentos obtidos em eventos científicos e instituições de fomento à pesquisa.</p>
+    <div class="section-label" style="color:var(--azul-mid)">Reconhecimento</div>
+    <div class="divider" style="background:var(--azul-mid)"></div>
+    <h2 class="section-title" style="color:var(--branco)">Prêmios &amp; Distinções</h2>
+    <p class="section-desc" style="color:rgba(255,255,255,.5)">Reconhecimentos obtidos em eventos científicos e instituições de fomento à pesquisa.</p>
     <div class="premio-grid">
+      {% assign premios = site.data.premios.items | limit: 3 %}
+      {% for premio in premios %}
       <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">🏆</div><div class="premio-ano">2024</div></div>
-        <div class="premio-nome">Melhor Trabalho em Genética Animal</div>
-        <div class="premio-entidade">Congresso Brasileiro de Zootecnia (ZOOTEC)</div>
-        <p class="premio-desc">Herdabilidade de escores de andamento no jumento Pêga via inferência bayesiana com BLUPF90+.</p>
+        <div class="premio-topo"><div class="premio-icon">{{ premio.icone }}</div><div class="premio-ano">{{ premio.ano }}</div></div>
+        <div class="premio-nome">{{ premio.nome }}</div>
+        <div class="premio-entidade">{{ premio.entidade }}</div>
+        <p class="premio-desc">{{ premio.descricao }}</p>
       </div>
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">🎖️</div><div class="premio-ano">2023</div></div>
-        <div class="premio-nome">Destaque em Produção Científica</div>
-        <div class="premio-entidade">EMVZ · UFBA</div>
-        <p class="premio-desc">Reconhecimento pela publicação em periódicos de alto impacto e pela conservação de raças nativas.</p>
-      </div>
-      <div class="premio-card">
-        <div class="premio-topo"><div class="premio-icon">📌</div><div class="premio-ano">2023</div></div>
-        <div class="premio-nome">Menção Honrosa — Poster</div>
-        <div class="premio-entidade">Simpósio Brasileiro de Melhoramento Animal (SBMA)</div>
-        <p class="premio-desc">Diversidade genética e endogamia em raças asininas nativas do Nordeste brasileiro.</p>
-      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-top:2rem">
+      <a href="{{ '/premios.html' | relative_url }}" class="btn-outline" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.7)">Ver todos os prêmios →</a>
     </div>
   </div>
 </section>
 
-<section id="noticias">
+<section id="noticias" style="background:var(--branco)">
   <div class="container">
     <div class="section-label">Últimas</div>
     <div class="divider"></div>
     <h2 class="section-title">Notícias do Grupo</h2>
     <p class="section-desc">Atualizações sobre projetos, publicações e eventos do GEMA.</p>
+    {% assign destaque = site.data.noticias.items | where: "destaque", true | first %}
+    {% assign secundarias = site.data.noticias.items | where: "destaque", false | limit: 3 %}
     <div class="noticias-grid">
+      {% if destaque %}
       <div class="noticia-destaque">
         <div>
-          <div class="noticia-data nd-data">Maio · 2025</div>
-          <h3 class="noticia-titulo">Artigo sobre herdabilidade do Pêga aceito em periódico internacional</h3>
-          <p class="noticia-texto">O trabalho de estimação de parâmetros genéticos para escores de andamento, membros e paleta no jumento Pêga, via inferência bayesiana com BLUPF90+, foi aceito para publicação. Um dos primeiros estudos genéticos de larga escala com a raça no Brasil.</p>
+          <div class="noticia-data nd-data">{{ destaque.data }}</div>
+          <h3 class="noticia-titulo">{{ destaque.titulo }}</h3>
+          <p class="noticia-texto">{{ destaque.texto }}</p>
         </div>
-        <a href="#" class="noticia-link-btn">Ler mais →</a>
+        {% if destaque.link %}<a href="{{ destaque.link | relative_url }}" class="noticia-link-btn">Ler mais →</a>{% endif %}
       </div>
+      {% endif %}
       <div class="noticias-lista">
+        {% for noticia in secundarias %}
         <div class="noticia-mini">
-          <div class="noticia-data nm-data">Abril · 2025</div>
-          <h4 class="nm-titulo">Apresentação no SBMA 2025 — Salvador, BA</h4>
+          <div class="noticia-data nm-data">{{ noticia.data }}</div>
+          <h4 class="nm-titulo">{{ noticia.titulo }}</h4>
         </div>
-        <div class="noticia-mini">
-          <div class="noticia-data nm-data">Março · 2025</div>
-          <h4 class="nm-titulo">Novo módulo de genômica na trilha aberta do GEMA</h4>
-        </div>
-        <div class="noticia-mini">
-          <div class="noticia-data nm-data">Jan · 2025</div>
-          <h4 class="nm-titulo">Início do projeto de caracterização genômica do Campolina</h4>
-        </div>
+        {% endfor %}
       </div>
+    </div>
+    <div style="margin-top:2rem">
+      <a href="{{ '/noticias.html' | relative_url }}" class="btn-outline">Ver todas as notícias →</a>
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <img class="footer-logo-svg" src="logo/logo-gema.svg" alt="GEMA">
-      <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links">
-        <li><a href="professores.html">Professores</a></li>
-        <li><a href="publicacoes.html">Publicações</a></li>
-        <li><a href="premios.html">Prêmios</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Recursos</div>
-      <ul class="footer-links">
-        <li><a href="https://glebstrauss.github.io/gema/" target="_blank">Curso aberto</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema" target="_blank">GitHub</a></li>
-        <li><a href="https://www.ufba.br" target="_blank">UFBA</a></li>
-        <li><a href="https://github.com/Glebstrauss/gema/issues/new" target="_blank">Contato</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 GEMA · EMVZ/UFBA</span>
-    <span><a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
-  </div>
-</footer>
-
-</body>
-</html>
