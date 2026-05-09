@@ -28,7 +28,7 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
             <div class="pub-title">{{ pub.titulo }}</div>
             <div class="pub-authors">{{ pub.autores }}</div>
             <div class="pub-journal">{{ pub.periodico }}{% if pub.qualis %} <span class="pub-badge">{{ pub.qualis }}</span>{% endif %}</div>
-            {% if pub.doi %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% else %}<a href="#" class="pub-doi">↗ DOI (em breve)</a>{% endif %}
+            {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% endif %}
           </div>
         </div>
         {% endfor %}

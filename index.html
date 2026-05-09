@@ -4,8 +4,8 @@ title: "GEMA — Grupo de Estudos em Melhoramento Animal"
 description: "Grupo de pesquisa em genética quantitativa, genômica e melhoramento de equídeos brasileiros. EMVZ · UFBA · Salvador, BA"
 ---
 
-<div style="max-width:1200px;margin:0 auto">
-<section id="inicio" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:8rem 3rem 4rem;min-height:100vh">
+<div class="hero-wrapper">
+<section id="inicio">
   <div>
     <div class="hero-tag">EMVZ · UFBA · Salvador, BA</div>
     <h1 class="hero-title">Genética &amp;<br><em>Melhoramento</em><br>Animal Aplicados</h1>
@@ -83,7 +83,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
           <div class="pub-title">{{ pub.titulo }}</div>
           <div class="pub-authors">{{ pub.autores }}</div>
           <div class="pub-journal">{{ pub.periodico }}{% if pub.qualis %} <span class="pub-badge">{{ pub.qualis }}</span>{% endif %}</div>
-          {% if pub.doi %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% else %}<a href="#" class="pub-doi">↗ DOI (em breve)</a>{% endif %}
+          {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% endif %}
         </div>
       </div>
       {% endfor %}
@@ -133,7 +133,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
           <h3 class="noticia-titulo">{{ destaque.titulo }}</h3>
           <p class="noticia-texto">{{ destaque.texto }}</p>
         </div>
-        {% if destaque.link %}<a href="{{ destaque.link | relative_url }}" class="noticia-link-btn">Ler mais →</a>{% endif %}
+        {% if destaque.link != "" %}<a href="{{ destaque.link }}" class="noticia-link-btn">Ler mais →</a>{% endif %}
       </div>
       {% endif %}
       <div class="noticias-lista">

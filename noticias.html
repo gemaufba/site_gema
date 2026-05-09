@@ -27,7 +27,7 @@ description: "Últimas notícias e atualizações do GEMA — projetos, publica�
           <h2 class="noticia-titulo">{{ destaque.titulo }}</h2>
           <p class="noticia-texto">{{ destaque.texto }}</p>
         </div>
-        {% if destaque.link %}<a href="{{ destaque.link }}" class="noticia-link-btn">Ler mais →</a>{% endif %}
+        {% if destaque.link != "" %}<a href="{{ destaque.link }}" class="noticia-link-btn">Ler mais →</a>{% endif %}
       </div>
       {% endif %}
       <div class="noticias-lista">
@@ -53,7 +53,7 @@ description: "Últimas notícias e atualizações do GEMA — projetos, publica�
         <span class="noticia-data">{{ noticia.data }}</span>
         <h3 class="noticia-titulo">{{ noticia.titulo }}</h3>
         <p>{{ noticia.texto }}</p>
-        {% if noticia.link %}<a href="{{ noticia.link }}">Ler mais →</a>{% endif %}
+        {% if noticia.link != "" %}<a href="{{ noticia.link }}">Ler mais →</a>{% endif %}
       </div>
       {% endfor %}
     </div>
