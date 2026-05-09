@@ -83,6 +83,21 @@ section{padding:6rem 3rem}
 .pub-doi{display:inline-flex;align-items:center;gap:.3rem;text-decoration:none;font-size:.75rem;color:var(--cinza);border:1px solid var(--borda);padding:.18rem .55rem;border-radius:100px;margin-top:.5rem;transition:color .2s,border-color .2s}
 .pub-doi:hover{color:var(--azul);border-color:var(--azul)}
 
+/* qualis colorido */
+.pub-badge--q1{background:rgba(28,78,221,.12);color:var(--azul-escuro)}
+.pub-badge--q2{background:rgba(0,140,130,.11);color:#0a6b64}
+.pub-badge--q3{background:rgba(160,120,0,.1);color:#7a5f00}
+.pub-badge--q4{background:rgba(150,150,150,.15);color:#555}
+
+/* navegação por ano */
+.pub-year-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.pub-year-btn{font-size:.8rem;font-weight:500;color:var(--azul);border:1px solid rgba(28,78,221,.25);padding:.3rem .9rem;border-radius:100px;text-decoration:none;transition:background .15s,border-color .2s}
+.pub-year-btn:hover{background:var(--azul-claro);border-color:var(--azul)}
+.pub-year-group{scroll-margin-top:84px}
+
+/* contagem na hero de publicações */
+.page-hero-count{font-size:.8rem;color:var(--azul);font-weight:500;margin-top:.75rem;letter-spacing:.04em}
+
 /* prêmios */
 .premio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
 .premio-card{border:1px solid rgba(28,78,221,.3);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:border-color .2s,background .2s}
@@ -110,6 +125,7 @@ section{padding:6rem 3rem}
 .noticia-mini:hover{border-color:rgba(28,78,221,.4);background:var(--azul-claro)}
 .nm-data{color:var(--azul);margin-bottom:.4rem}
 .nm-titulo{font-size:.9rem;font-weight:500;color:var(--preto);line-height:1.4}
+.nm-texto{font-size:.78rem;color:var(--cinza);line-height:1.55;margin-top:.35rem}
 .noticia-card{border:1px solid var(--borda);border-radius:16px;padding:1.75rem;transition:transform .2s,box-shadow .2s}
 .noticia-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(28,78,221,.07)}
 .noticia-card .noticia-data{color:var(--azul);display:block;margin-bottom:.75rem}
@@ -145,6 +161,9 @@ footer{background:var(--preto);padding:4.5rem 3rem 2rem}
 .footer-links a:hover{color:var(--azul-mid)}
 .footer-bottom{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:rgba(255,255,255,.25)}
 .footer-bottom a{color:var(--azul-mid);text-decoration:none}
+
+/* ── 404 ─────────────────────────────────────────────────────────────────── */
+.notfound-num{font-family:'Playfair Display',serif;font-size:clamp(6rem,20vw,13rem);font-weight:600;line-height:1;color:var(--azul-claro);margin-bottom:1.25rem;user-select:none;letter-spacing:-.02em}
 
 /* ── acessibilidade ──────────────────────────────────────────────────────── */
 .skip-link{position:absolute;top:-48px;left:1rem;background:var(--azul);color:#fff;padding:.5rem 1.25rem;border-radius:0 0 8px 8px;text-decoration:none;font-size:.85rem;font-weight:500;z-index:9999;transition:top .2s}

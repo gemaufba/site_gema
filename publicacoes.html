@@ -10,14 +10,24 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
     <div class="divider"></div>
     <h1 class="page-hero-title">Publicações <em>Científicas</em></h1>
     <p class="page-hero-sub">Artigos em periódicos nacionais e internacionais em genética quantitativa, genômica e melhoramento de equídeos brasileiros.</p>
+    <p class="page-hero-count">{{ site.data.publicacoes.items | size }} publicações indexadas</p>
   </div>
 </div>
 
 <section style="background:var(--branco)">
   <div class="container">
+
     {% assign anos = site.data.publicacoes.items | map: "ano" | uniq | sort | reverse %}
+
+    <!-- navegação rápida por ano -->
+    <nav class="pub-year-nav" aria-label="Navegar por ano">
+      {% for ano in anos %}
+      <a href="#pub-{{ ano }}" class="pub-year-btn">{{ ano }}</a>
+      {% endfor %}
+    </nav>
+
     {% for ano in anos %}
-    <div class="pub-year-group">
+    <div class="pub-year-group" id="pub-{{ ano }}">
       <div class="pub-year-label">{{ ano }}</div>
       <div class="pub-list">
         {% assign pubs_ano = site.data.publicacoes.items | where: "ano", ano %}
@@ -27,7 +37,10 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
           <div class="pub-body">
             <div class="pub-title">{{ pub.titulo }}</div>
             <div class="pub-authors">{{ pub.autores }}</div>
-            <div class="pub-journal">{{ pub.periodico }}{% if pub.qualis %} <span class="pub-badge">{{ pub.qualis }}</span>{% endif %}</div>
+            <div class="pub-journal">
+              {{ pub.periodico }}
+              {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}">{{ pub.qualis }}</span>{% endif %}
+            </div>
             {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% endif %}
           </div>
         </div>
@@ -35,5 +48,6 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
       </div>
     </div>
     {% endfor %}
+
   </div>
 </section>

@@ -35,6 +35,7 @@ description: "Últimas notícias e atualizações do GEMA — projetos, publica�
         <div class="noticia-mini">
           <div class="noticia-data nm-data">{{ noticia.data }}</div>
           <h4 class="nm-titulo">{{ noticia.titulo }}</h4>
+          <p class="nm-texto">{{ noticia.texto | truncatewords: 16 }}</p>
         </div>
         {% endfor %}
       </div>

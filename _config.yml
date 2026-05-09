@@ -5,6 +5,7 @@ url: "https://glebstrauss.github.io"
 baseurl: "/site_gema"
 author: "GEMA/UFBA"
 lang: pt-BR
+timezone: "America/Bahia"
 
 # Coleções
 collections:

@@ -16,20 +16,20 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
     </div>
     <div class="hero-stats">
       <div><div class="stat-num">{{ site.data.publicacoes.items | size }}+</div><div class="stat-label">Publicações</div></div>
-      <div><div class="stat-num">3</div><div class="stat-label">Linhas de pesquisa</div></div>
+      <div><div class="stat-num">{{ site.professores | size }}</div><div class="stat-label">Pesquisadores</div></div>
       <div><div class="stat-num">{{ site.data.premios.items | size }}+</div><div class="stat-label">Prêmios</div></div>
     </div>
   </div>
   <div class="hero-visual">
     <div class="hero-logo-wrap">
       <div class="hero-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <img class="hero-logo-svg" src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA — Grupo de Estudos em Melhoramento Animal">
+      <img class="hero-logo-svg" src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA — Grupo de Estudos em Melhoramento Animal" width="500" height="auto">
     </div>
   </div>
 </section>
 </div>
 
-<div class="linha-deco">
+<div class="linha-deco" aria-hidden="true">
   <div class="linha-inner">
     <span class="linha-item">Genética Quantitativa</span><span class="linha-dot"></span>
     <span class="linha-item">Melhoramento Animal</span><span class="linha-dot"></span>
@@ -49,6 +49,35 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
     <span class="linha-item">EMVZ · UFBA</span><span class="linha-dot"></span>
   </div>
 </div>
+
+<section id="pesquisa" style="background:var(--branco)">
+  <div class="container">
+    <div class="section-label">Pesquisa</div>
+    <div class="divider"></div>
+    <h2 class="section-title">Linhas de Pesquisa</h2>
+    <p class="section-desc">Três eixos científicos orientam as investigações do grupo, com foco em espécies de alto valor zootécnico e cultural para o Brasil.</p>
+    <div class="linhas-grid">
+      <div class="linha-card">
+        <div class="linha-num" aria-hidden="true">01</div>
+        <div class="linha-titulo">Genética Quantitativa e Melhoramento</div>
+        <p class="linha-desc">Estimação de parâmetros genéticos (herdabilidade, correlações), predição de valores genéticos (BLUP/BLUPF90+) e avaliação de progresso genético em raças equinas e asininas.</p>
+      </div>
+      <div class="linha-card">
+        <div class="linha-num" aria-hidden="true">02</div>
+        <div class="linha-titulo">Genômica e Diversidade Molecular</div>
+        <p class="linha-desc">Análise de SNP, estrutura populacional, endogamia, diversidade alélica e seleção genômica em raças nativas do Nordeste e Centro-Oeste brasileiro.</p>
+      </div>
+      <div class="linha-card">
+        <div class="linha-num" aria-hidden="true">03</div>
+        <div class="linha-titulo">Morfometria e Caracterização Racial</div>
+        <p class="linha-desc">PCA, medidas morfométricas e fenotípicas para descrição e conservação de raças localmente adaptadas como o Pêga e o Campolina.</p>
+      </div>
+    </div>
+    <div style="margin-top:2rem">
+      <a href="{{ '/professores.html' | relative_url }}#pesquisa" class="btn-outline">Ver detalhes das linhas →</a>
+    </div>
+  </div>
+</section>
 
 <section id="professores" style="background:var(--cinza-claro)">
   <div class="container">
@@ -82,7 +111,10 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
         <div class="pub-body">
           <div class="pub-title">{{ pub.titulo }}</div>
           <div class="pub-authors">{{ pub.autores }}</div>
-          <div class="pub-journal">{{ pub.periodico }}{% if pub.qualis %} <span class="pub-badge">{{ pub.qualis }}</span>{% endif %}</div>
+          <div class="pub-journal">
+            {{ pub.periodico }}
+            {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}">{{ pub.qualis }}</span>{% endif %}
+          </div>
           {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% endif %}
         </div>
       </div>
@@ -101,8 +133,8 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
     <h2 class="section-title" style="color:var(--branco)">Prêmios &amp; Distinções</h2>
     <p class="section-desc" style="color:rgba(255,255,255,.5)">Reconhecimentos obtidos em eventos científicos e instituições de fomento à pesquisa.</p>
     <div class="premio-grid">
-      {% assign premios = site.data.premios.items | limit: 3 %}
-      {% for premio in premios %}
+      {% assign premios_recentes = site.data.premios.items | sort: "ano" | reverse | limit: 3 %}
+      {% for premio in premios_recentes %}
       <div class="premio-card">
         <div class="premio-topo"><div class="premio-icon">{{ premio.icone }}</div><div class="premio-ano">{{ premio.ano }}</div></div>
         <div class="premio-nome">{{ premio.nome }}</div>
@@ -141,6 +173,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
         <div class="noticia-mini">
           <div class="noticia-data nm-data">{{ noticia.data }}</div>
           <h4 class="nm-titulo">{{ noticia.titulo }}</h4>
+          <p class="nm-texto">{{ noticia.texto | truncatewords: 16 }}</p>
         </div>
         {% endfor %}
       </div>
