@@ -1,5 +1,5 @@
 <div class="prof-card">
-  {% if include.prof.foto %}
+  {% if include.prof.foto != "" %}
     <img src="{{ include.prof.foto | relative_url }}"
          alt="Foto de {{ include.prof.nome }}"
          loading="lazy"
@@ -15,7 +15,7 @@
       <span class="tag">{{ tag }}</span>
     {% endfor %}
   </div>
-  {% if include.prof.lattes %}
+  {% if include.prof.lattes != "" %}
     <a href="{{ include.prof.lattes }}" target="_blank" rel="noopener" class="pub-doi" style="margin-top:.75rem">↗ Lattes</a>
   {% endif %}
 </div>
