@@ -227,6 +227,7 @@ section[id]{scroll-margin-top:84px}
 .premio-year-nav{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 3rem;background:#0a0a12;border-bottom:1px solid rgba(28,78,221,.15)}
 .premio-year-nav .pub-year-btn{border-color:rgba(85,120,232,.3);color:var(--azul-mid)}
 .premio-year-nav .pub-year-btn:hover{background:rgba(28,78,221,.15);border-color:var(--azul-mid)}
+.pub-year-count{font-size:.72em;opacity:.6;font-family:'DM Sans',sans-serif}
 .premio-year-nav .pub-year-btn.is-active{background:var(--azul);color:#fff;border-color:var(--azul)}
 @media(max-width:600px){.premio-year-nav{padding:.75rem 1.25rem}}
 

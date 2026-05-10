@@ -39,9 +39,10 @@ description: "Prêmios e distinções conquistados pelo GEMA em eventos científ
     </div>
   </div>
 </div>
-<nav class="premio-year-nav" aria-label="Navegar por ano de prêmio">
+<nav class="premio-year-nav" aria-label="Navegar por ano de prêmio" id="premio-year-nav">
   {% for ano in anos_premios %}
-  <a href="#premio-{{ ano }}" class="pub-year-btn">{{ ano }}</a>
+  {% assign n_ano = site.data.premios.items | where: "ano", ano | size %}
+  <a href="#premio-{{ ano }}" class="pub-year-btn">{{ ano }}<span class="pub-year-count"> ({{ n_ano }})</span></a>
   {% endfor %}
 </nav>
 
@@ -66,3 +67,24 @@ description: "Prêmios e distinções conquistados pelo GEMA em eventos científ
   </div>
 </section>
 {% endfor %}
+
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  var sections = Array.from(document.querySelectorAll('[id^="premio-"]'));
+  var btns     = Array.from(document.querySelectorAll('#premio-year-nav .pub-year-btn'));
+  if (!sections.length || !btns.length) return;
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        btns.forEach(function (b) {
+          b.classList.toggle('is-active', b.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-8% 0px -82% 0px', threshold: 0 });
+
+  sections.forEach(function (s) { obs.observe(s); });
+})();
+</script>
