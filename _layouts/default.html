@@ -44,6 +44,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<!-- Tema escuro — previne flash (FOUC) antes do CSS carregar -->
+<script>(function(){try{var t=localStorage.getItem('gema-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();</script>
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
@@ -54,6 +56,10 @@
   <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="GEMA — página inicial">
     <img src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA — Grupo de Estudos em Melhoramento Animal" height="54">
   </a>
+  <button class="nav-theme-btn" id="nav-theme-btn" aria-label="Ativar tema escuro" title="Alternar tema claro/escuro">
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
   <button class="nav-hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
     <span></span><span></span><span></span>
   </button>
@@ -135,6 +141,26 @@
       btn.focus();
     }
   });
+})();
+
+// ── Tema claro/escuro ─────────────────────────────────────────────────────
+(function () {
+  var btn = document.getElementById('nav-theme-btn');
+  if (!btn) return;
+  var html = document.documentElement;
+
+  function setTheme(dark) {
+    html.classList.toggle('dark', dark);
+    try { localStorage.setItem('gema-theme', dark ? 'dark' : 'light'); } catch(e) {}
+    btn.setAttribute('aria-label', dark ? 'Ativar tema claro' : 'Ativar tema escuro');
+  }
+
+  btn.addEventListener('click', function () {
+    setTheme(!html.classList.contains('dark'));
+  });
+
+  // sync aria-label with current state on load
+  btn.setAttribute('aria-label', html.classList.contains('dark') ? 'Ativar tema claro' : 'Ativar tema escuro');
 })();
 
 // ── Voltar ao topo ─────────────────────────────────────────────────────────

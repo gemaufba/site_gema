@@ -104,6 +104,7 @@ section{padding:6rem 3rem}
 
 /* contagem na hero de publicações */
 .page-hero-count{font-size:.8rem;color:var(--azul);font-weight:500;margin-top:.75rem;letter-spacing:.04em}
+.page-hero-qualis{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
 
 /* prêmios */
 .premio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
@@ -269,6 +270,54 @@ footer{background:var(--preto);padding:4.5rem 3rem 2rem}
 
 /* ── 404 ─────────────────────────────────────────────────────────────────── */
 .notfound-num{font-family:'Playfair Display',serif;font-size:clamp(6rem,20vw,13rem);font-weight:600;line-height:1;color:var(--azul-claro);margin-bottom:1.25rem;user-select:none;letter-spacing:-.02em}
+
+/* ── tipografia balanceada ────────────────────────────────────────────────── */
+.hero-title,.section-title,.page-hero-title,.noticia-titulo,.prof-nome,.linha-titulo,.pub-year-label{text-wrap:balance}
+
+/* ── botão de tema ────────────────────────────────────────────────────────── */
+.nav-theme-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:none;border:1px solid var(--borda);cursor:pointer;color:var(--cinza);transition:background .2s,border-color .2s,color .2s;flex-shrink:0}
+.nav-theme-btn:hover{background:var(--azul-claro);border-color:var(--azul);color:var(--azul)}
+.icon-moon{display:none}
+html.dark .icon-sun{display:none}
+html.dark .icon-moon{display:block}
+
+/* ══════════════════════════════════════════════════════════════
+   TEMA ESCURO
+   ══════════════════════════════════════════════════════════════ */
+html.dark{
+  --preto:#e2e2ec;--branco:#0d0d18;--cinza:#9898ab;
+  --cinza-claro:#14141f;--borda:rgba(100,130,255,.14);
+  --azul-claro:rgba(28,78,221,.17)
+}
+html.dark nav{background:rgba(13,13,24,.96);border-bottom-color:rgba(100,130,255,.14)}
+html.dark .prof-card{background:#16161f;border-color:rgba(100,130,255,.15)}
+html.dark .prof-card:hover{box-shadow:0 10px 36px rgba(0,0,0,.35)}
+html.dark .linha-card{background:#16161f;border-color:rgba(100,130,255,.15)}
+html.dark .noticia-mini{background:#16161f;border-color:rgba(100,130,255,.15)}
+html.dark .noticia-mini:hover{background:#1c1c2e;border-color:rgba(100,130,255,.3)}
+html.dark .noticia-card{background:#16161f;border-color:rgba(100,130,255,.15)}
+html.dark .noticia-card--destaque{background:rgba(28,78,221,.18) !important;border-color:rgba(28,78,221,.35) !important}
+html.dark .pub-item:hover{background:#16161f}
+html.dark .pub-filter-bar{background:var(--cinza-claro);border-color:var(--borda)}
+html.dark .pub-search{background:#1a1a2e;border-color:rgba(100,130,255,.2)}
+html.dark .pub-badge{background:rgba(28,78,221,.22);color:var(--azul-mid)}
+html.dark .pub-badge--q1{background:rgba(28,78,221,.22);color:var(--azul-mid)}
+html.dark .pub-badge--q2{background:rgba(0,140,130,.2);color:#3ab8b0}
+html.dark .pub-badge--q3{background:rgba(160,120,0,.18);color:#d4a017}
+html.dark .tag{background:rgba(28,78,221,.18);color:var(--azul-mid)}
+html.dark .linha-deco{background:rgba(28,78,221,.08);border-color:rgba(28,78,221,.12)}
+html.dark footer{background:#09090f !important}
+html.dark .premios-statsbar{background:#09090f}
+html.dark .notfound-num{color:rgba(28,78,221,.32)}
+/* seções escuras por inline style — mantém escuras */
+html.dark section[style*="background:var(--preto)"]{background:#09090f !important}
+html.dark .page-hero[style*="background:var(--preto)"]{background:#09090f !important}
+html.dark section[style*="background:#111116"]{background:#0c0c14 !important}
+/* texto branco dentro de seções escuras — protege */
+html.dark .premio-nome{color:#e2e2ec !important}
+html.dark .noticia-destaque .noticia-titulo{color:#e2e2ec !important}
+/* mobile nav overlay */
+@media(max-width:600px){html.dark .nav-links{background:rgba(13,13,24,.98) !important}}
 
 /* ── acessibilidade ──────────────────────────────────────────────────────── */
 .skip-link{position:absolute;top:-48px;left:1rem;background:var(--azul);color:#fff;padding:.5rem 1.25rem;border-radius:0 0 8px 8px;text-decoration:none;font-size:.85rem;font-weight:500;z-index:9999;transition:top .2s}

@@ -11,6 +11,16 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
     <h1 class="page-hero-title">Publicações <em>Científicas</em></h1>
     <p class="page-hero-sub">Artigos em periódicos nacionais e internacionais em genética quantitativa, genômica e melhoramento de equídeos brasileiros.</p>
     <p class="page-hero-count">{{ site.data.publicacoes.items | size }} publicações indexadas</p>
+    {% assign q1_count = site.data.publicacoes.items | where: "qualis", "Q1" | size %}
+    {% assign q2_count = site.data.publicacoes.items | where: "qualis", "Q2" | size %}
+    {% assign q3_count = site.data.publicacoes.items | where: "qualis", "Q3" | size %}
+    {% if q1_count > 0 or q2_count > 0 or q3_count > 0 %}
+    <p class="page-hero-qualis">
+      {% if q1_count > 0 %}<span class="pub-badge pub-badge--q1">Q1</span> {{ q1_count }}{% endif %}
+      {% if q2_count > 0 %}<span class="pub-badge pub-badge--q2">Q2</span> {{ q2_count }}{% endif %}
+      {% if q3_count > 0 %}<span class="pub-badge pub-badge--q3">Q3</span> {{ q3_count }}{% endif %}
+    </p>
+    {% endif %}
   </div>
 </div>
 
