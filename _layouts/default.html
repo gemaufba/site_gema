@@ -83,7 +83,7 @@
       <img class="footer-logo-svg" src="{{ '/logo/logo-gema.svg' | relative_url }}" alt="GEMA" width="89" height="64" loading="lazy">
       <p class="footer-tagline">Grupo de Estudos em Melhoramento Animal,<br>Genética Quantitativa e Genômica Aplicada.<br><span style="color:rgba(255,255,255,.2);font-size:.8rem">EMVZ · UFBA · Salvador, Bahia</span></p>
     </div>
-    <div>
+    <nav aria-label="Páginas do site">
       <div class="footer-col-title">Navegação</div>
       <ul class="footer-links">
         <li><a href="{{ '/professores.html' | relative_url }}">Professores</a></li>
@@ -91,8 +91,8 @@
         <li><a href="{{ '/premios.html' | relative_url }}">Prêmios</a></li>
         <li><a href="{{ '/noticias.html' | relative_url }}">Notícias</a></li>
       </ul>
-    </div>
-    <div>
+    </nav>
+    <nav aria-label="Recursos externos">
       <div class="footer-col-title">Recursos</div>
       <ul class="footer-links">
         <li><a href="https://glebstrauss.github.io/gema/" target="_blank" rel="noopener">Curso aberto ↗</a></li>
@@ -100,7 +100,7 @@
         <li><a href="https://www.ufba.br" target="_blank" rel="noopener">UFBA ↗</a></li>
         <li><a href="{{ '/admin/' | relative_url }}">Admin (CMS)</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
   <div class="footer-bottom">
     <span>© {{ site.time | date: "%Y" }} GEMA · EMVZ/UFBA</span>

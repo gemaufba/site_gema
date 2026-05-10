@@ -92,7 +92,8 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
     <!-- ── Navegação rápida por ano ──────────────────────────────────────── -->
     <nav class="pub-year-nav" aria-label="Navegar por ano" id="pub-year-nav">
       {% for ano in anos %}
-      <a href="#pub-{{ ano }}" class="pub-year-btn">{{ ano }}</a>
+      {% assign n_pub_ano = site.data.publicacoes.items | where: "ano", ano | size %}
+      <a href="#pub-{{ ano }}" class="pub-year-btn">{{ ano }}<span class="pub-year-count"> ({{ n_pub_ano }})</span></a>
       {% endfor %}
     </nav>
 

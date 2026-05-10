@@ -89,11 +89,13 @@ section{padding:6rem 3rem}
 .pub-badge{display:inline-block;font-size:.68rem;padding:.18rem .55rem;border-radius:100px;font-weight:500;margin-left:.5rem;background:var(--azul-claro);color:var(--azul-escuro)}
 .pub-doi{display:inline-flex;align-items:center;gap:.3rem;text-decoration:none;font-size:.75rem;color:var(--cinza);border:1px solid var(--borda);padding:.18rem .55rem;border-radius:100px;margin-top:.5rem;transition:color .2s,border-color .2s}
 .pub-doi:hover{color:var(--azul);border-color:var(--azul)}
+.pub-doi:focus-visible{outline:2px solid var(--azul);outline-offset:3px;border-radius:100px}
 /* ações por publicação (DOI + Citar) */
 .pub-actions{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:.5rem}
 .pub-actions .pub-doi{margin-top:0}
 .pub-citar{display:inline-flex;align-items:center;gap:.3rem;background:none;border:1px solid var(--borda);border-radius:100px;padding:.18rem .55rem;font-size:.75rem;color:var(--cinza);cursor:pointer;font-family:inherit;transition:color .2s,border-color .2s,background .2s}
 .pub-citar:hover{color:var(--azul);border-color:var(--azul)}
+.pub-citar:focus-visible{outline:2px solid var(--azul);outline-offset:3px;border-radius:100px}
 .pub-citar.copiado{color:#0a6b64;border-color:#0a6b64;background:rgba(0,140,130,.07)}
 
 /* qualis colorido */
@@ -256,6 +258,10 @@ section[id]{scroll-margin-top:84px}
 /* ── botão imprimir ──────────────────────────────────────────────────────── */
 .pub-print-btn{display:inline-flex;align-items:center;gap:.35rem;background:none;border:1px solid var(--borda);border-radius:100px;padding:.3rem .85rem;font-size:.78rem;color:var(--cinza);cursor:pointer;font-family:inherit;transition:border-color .2s,color .2s;white-space:nowrap}
 .pub-print-btn:hover{border-color:var(--preto);color:var(--preto)}
+
+/* ── seção join (CTA recrutamento) ──────────────────────────────────────── */
+.section-join{padding:5rem 3rem}
+@media(max-width:600px){.section-join{padding:4rem 1.25rem}}
 
 /* ── CTA recrutamento ────────────────────────────────────────────────────── */
 .btn-join{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.15);color:#fff;text-decoration:none;padding:.75rem 1.75rem;border-radius:100px;font-size:.9rem;font-weight:500;border:1px solid rgba(255,255,255,.3);transition:background .2s}
