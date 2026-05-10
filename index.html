@@ -12,7 +12,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
     <p class="hero-sub">Grupo de pesquisa dedicado à genética quantitativa, avaliação genômica e conservação de raças de equídeos brasileiros.</p>
     <div class="hero-actions">
       <a href="{{ '/publicacoes.html' | relative_url }}" class="btn-primary">Ver publicações →</a>
-      <a href="https://glebstrauss.github.io/gema/" target="_blank" rel="noopener" class="btn-outline">Curso aberto ↗</a>
+      <a href="https://glebstrauss.github.io/gema/" target="_blank" rel="noopener noreferrer" class="btn-outline">Curso aberto ↗</a>
     </div>
     <div class="hero-stats">
       <div><div class="stat-num">{{ site.data.publicacoes.items | size }}+</div><div class="stat-label">Publicações</div></div>
@@ -50,7 +50,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
   </div>
 </div>
 
-<section id="pesquisa" style="background:var(--branco)">
+<section id="pesquisa" aria-label="Linhas de pesquisa" style="background:var(--branco)">
   <div class="container">
     <div class="section-label">Pesquisa</div>
     <div class="divider"></div>
@@ -79,7 +79,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
   </div>
 </section>
 
-<section id="professores" style="background:var(--cinza-claro)">
+<section id="professores" aria-label="Professores e pesquisadores" style="background:var(--cinza-claro)">
   <div class="container">
     <div class="section-label">Equipe</div>
     <div class="divider"></div>
@@ -97,7 +97,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
   </div>
 </section>
 
-<section id="publicacoes" style="background:var(--branco)">
+<section id="publicacoes" aria-label="Publicações recentes" style="background:var(--branco)">
   <div class="container">
     <div class="section-label">Produção Científica</div>
     <div class="divider"></div>
@@ -115,7 +115,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
             {{ pub.periodico }}
             {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}">{{ pub.qualis }}</span>{% endif %}
           </div>
-          {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener">↗ DOI</a>{% endif %}
+          {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener noreferrer">↗ DOI</a>{% endif %}
         </div>
       </div>
       {% endfor %}
@@ -126,7 +126,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
   </div>
 </section>
 
-<section id="premios" style="background:var(--preto)">
+<section id="premios" aria-label="Prêmios e distinções" style="background:var(--preto)">
   <div class="container">
     <div class="section-label" style="color:var(--azul-mid)">Reconhecimento</div>
     <div class="divider" style="background:var(--azul-mid)"></div>
@@ -149,7 +149,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
   </div>
 </section>
 
-<section id="noticias" style="background:var(--branco)">
+<section id="noticias" aria-label="Notícias do grupo" style="background:var(--branco)">
   <div class="container">
     <div class="section-label">Últimas</div>
     <div class="divider"></div>
