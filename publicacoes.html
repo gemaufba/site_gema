@@ -35,7 +35,12 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
         <svg class="pub-search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="search" id="pub-search" class="pub-search"
                placeholder="Buscar por título, autor ou periódico…"
-               autocomplete="off" aria-label="Buscar publicações">
+               autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false"
+               aria-label="Buscar publicações">
+        <span class="pub-search-kbd" aria-hidden="true"><kbd>/</kbd></span>
+        <button class="pub-search-clear" id="pub-search-clear" type="button" aria-label="Limpar busca">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
       </div>
       <div class="pub-filter-qualis" role="group" aria-label="Filtrar por Qualis">
         <button class="pub-filter-btn is-active" data-filter="">Todos</button>
@@ -99,6 +104,8 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
 <script>
 (function () {
   var search     = document.getElementById('pub-search');
+  var clearBtn   = document.getElementById('pub-search-clear');
+  var searchWrap = search ? search.closest('.pub-search-wrap') : null;
   var resetBtn   = document.getElementById('pub-reset');
   var noRes      = document.getElementById('pub-no-results');
   var yearNav    = document.getElementById('pub-year-nav');
@@ -108,6 +115,11 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
   var groups     = Array.from(document.querySelectorAll('.pub-year-group'));
   var activeQ    = '';
   var total      = items.length;
+
+  // ── Estado do campo de busca (mostra/oculta botão × e hint /) ────────────
+  function updateSearchWrap() {
+    if (searchWrap) searchWrap.classList.toggle('has-value', !!(search && search.value));
+  }
 
   // ── Contador de resultados ────────────────────────────────────────────────
   function updateCount(n) {
@@ -146,6 +158,7 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
 
   function reset() {
     if (search) search.value = '';
+    updateSearchWrap();
     activeQ = '';
     filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
     if (filterBtns[0]) filterBtns[0].classList.add('is-active');
@@ -153,8 +166,19 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
     if (search) search.focus();
   }
 
-  if (search)   search.addEventListener('input', applyFilter);
+  if (search) search.addEventListener('input', function () { updateSearchWrap(); applyFilter(); });
   if (resetBtn) resetBtn.addEventListener('click', reset);
+
+  // ── Botão × — limpa busca sem tirar o foco do input ──────────────────────
+  if (clearBtn) {
+    clearBtn.addEventListener('mousedown', function (e) { e.preventDefault(); });
+    clearBtn.addEventListener('click', function () {
+      if (search) search.value = '';
+      updateSearchWrap();
+      applyFilter();
+      if (search) search.focus();
+    });
+  }
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
