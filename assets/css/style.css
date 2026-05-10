@@ -438,3 +438,26 @@ body.nav-open .nav-hamburger span:nth-child(3){transform:translateY(-7px) rotate
   .pub-item{flex-direction:column;gap:.5rem}
   .pub-year{min-width:unset}
 }
+
+/* ── barra de stats de publicações ──────────────────────────────────────── */
+.pub-statsbar{background:var(--cinza-claro);border-bottom:1px solid var(--borda);padding:.1rem 0}
+.pub-statsbar .psi-num{color:var(--azul)}
+.pub-statsbar .psi-label{color:var(--cinza)}
+.pub-statsbar .psi-div{background:rgba(28,78,221,.18)}
+html.dark .pub-statsbar{background:#0c0c18;border-color:rgba(100,130,255,.14)}
+
+/* ── badge "Novo" em notícias ────────────────────────────────────────────── */
+.noticia-badge--novo{background:#0a6b64}
+
+/* ── alto contraste (prefers-contrast: more) ─────────────────────────────── */
+@media(prefers-contrast: more){
+  :root{--borda:rgba(28,78,221,.45);--cinza:#333}
+  .btn-outline,.pub-filter-btn,.pub-print-btn,.pub-reset,.pub-citar{border-width:2px !important}
+  .prof-card,.noticia-card,.noticia-mini,.linha-card,.premio-card{border-width:2px}
+  .pub-search{border-width:2px}
+  .pub-year-btn,.pub-year-nav,.premio-year-nav{border-width:2px}
+  .tag{border:1px solid rgba(28,78,221,.45)}
+  .nav-links a{color:var(--preto)}
+  .nav-links a.ativa{color:var(--azul)}
+  html.dark .nav-links a{color:var(--preto)}
+}

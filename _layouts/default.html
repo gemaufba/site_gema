@@ -136,11 +136,31 @@
   }
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && document.body.classList.contains('nav-open')) {
+    var isOpen = document.body.classList.contains('nav-open');
+
+    if (e.key === 'Escape' && isOpen) {
       document.body.classList.remove('nav-open');
       btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-label', 'Abrir menu de navegação');
       btn.focus();
+      return;
+    }
+
+    // Focus trap — mantém Tab dentro do menu aberto
+    if (e.key === 'Tab' && isOpen) {
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      var focusable = Array.from(nav.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter(function (el) { return el.offsetParent !== null; });
+      if (focusable.length < 2) return;
+      var first = focusable[0];
+      var last  = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
     }
   });
 })();

@@ -4,6 +4,11 @@ title: "Publicações"
 description: "Produção científica do GEMA em genética quantitativa, genômica e melhoramento de equídeos brasileiros"
 ---
 
+{% assign _pub_anos_asc = site.data.publicacoes.items | map: "ano" | uniq | sort %}
+{% assign pub_ano_min   = _pub_anos_asc | first %}
+{% assign pub_ano_max   = _pub_anos_asc | last %}
+{% assign pub_q1_total  = site.data.publicacoes.items | where: "qualis", "Q1" | size %}
+
 <div class="page-hero">
   <div class="container">
     <div class="section-label">Produção Científica</div>
@@ -21,6 +26,27 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
       {% if q3_count > 0 %}<span class="pub-badge pub-badge--q3">Q3</span> {{ q3_count }}{% endif %}
     </p>
     {% endif %}
+  </div>
+</div>
+
+<div class="pub-statsbar">
+  <div class="container">
+    <div class="premios-stats">
+      <div class="psi">
+        <span class="psi-num">{{ site.data.publicacoes.items | size }}</span>
+        <span class="psi-label">Total de publicações</span>
+      </div>
+      <div class="psi-div" aria-hidden="true"></div>
+      <div class="psi">
+        <span class="psi-num">{{ pub_ano_min }}–{{ pub_ano_max }}</span>
+        <span class="psi-label">Período</span>
+      </div>
+      <div class="psi-div" aria-hidden="true"></div>
+      <div class="psi">
+        <span class="psi-num">{{ pub_q1_total }}</span>
+        <span class="psi-label">Artigos Q1</span>
+      </div>
+    </div>
   </div>
 </div>
 
