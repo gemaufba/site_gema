@@ -122,10 +122,10 @@ section{padding:6rem 3rem}
 .premio-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--azul),var(--azul-mid))}
 .premio-topo{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
 .premio-icon{font-size:1.6rem}
-.premio-ano{font-size:.72rem;color:rgba(255,255,255,.4);padding-top:.2rem}
-.premio-nome{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--branco);margin-bottom:.35rem}
+.premio-ano{font-size:.72rem;color:var(--cinza);padding-top:.2rem}
+.premio-nome{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--preto);margin-bottom:.35rem}
 .premio-entidade{font-size:.78rem;color:var(--azul-mid);font-weight:500;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.04em}
-.premio-desc{font-size:.875rem;color:rgba(255,255,255,.5);line-height:1.65}
+.premio-desc{font-size:.875rem;color:var(--cinza);line-height:1.65}
 
 /* notícias */
 .noticias-grid{display:grid;grid-template-columns:3fr 2fr;gap:1.25rem}
@@ -235,15 +235,18 @@ section[id]{scroll-margin-top:84px}
 .pub-year-group .pub-item .pub-year{display:none}
 
 /* ── navegação por ano de prêmios ────────────────────────────────────────── */
-.premio-year-nav{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 3rem;background:#0a0a12;border-bottom:1px solid rgba(28,78,221,.15)}
-.premio-year-nav .pub-year-btn{border-color:rgba(85,120,232,.3);color:var(--azul-mid)}
-.premio-year-nav .pub-year-btn:hover{background:rgba(28,78,221,.15);border-color:var(--azul-mid)}
+.premio-year-nav{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 3rem;background:var(--branco);border-bottom:1px solid var(--borda)}
+.premio-year-nav .pub-year-btn{border-color:rgba(28,78,221,.25);color:var(--azul)}
+.premio-year-nav .pub-year-btn:hover{background:var(--azul-claro);border-color:var(--azul)}
 .pub-year-count{font-size:.72em;opacity:.6;font-family:'DM Sans',sans-serif}
 .premio-year-nav .pub-year-btn.is-active{background:var(--azul);color:#fff;border-color:var(--azul)}
 @media(max-width:600px){.premio-year-nav{padding:.75rem 1.25rem}}
 
 /* ── barra de stats de prêmios ───────────────────────────────────────────── */
-.premios-statsbar{background:#0f0f15;border-bottom:1px solid rgba(28,78,221,.18);padding:.1rem 0}
+.premios-statsbar{background:var(--cinza-claro);border-bottom:1px solid var(--borda);padding:.1rem 0}
+.premios-statsbar .psi-num{color:var(--azul)}
+.premios-statsbar .psi-label{color:var(--cinza)}
+.premios-statsbar .psi-div{background:rgba(28,78,221,.18)}
 .premios-stats{display:flex;align-items:center;gap:0;flex-wrap:wrap;padding:.75rem 0}
 .psi{display:flex;flex-direction:column;gap:.18rem;padding:1rem 2.5rem 1rem 0}
 .psi-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--azul-mid);line-height:1}
@@ -394,14 +397,16 @@ html.dark .pub-badge--q3{background:rgba(160,120,0,.18);color:#d4a017}
 html.dark .tag{background:rgba(28,78,221,.18);color:var(--azul-mid)}
 html.dark .linha-deco{background:rgba(28,78,221,.08);border-color:rgba(28,78,221,.12)}
 html.dark footer{background:#09090f !important}
-html.dark .premios-statsbar{background:#09090f}
+html.dark .premios-statsbar{background:#0c0c18;border-color:rgba(100,130,255,.14)}
+html.dark .premios-statsbar .psi-num{color:var(--azul-mid)}
+html.dark .premios-statsbar .psi-label{color:rgba(255,255,255,.35)}
+html.dark .premios-statsbar .psi-div{background:rgba(255,255,255,.08)}
+html.dark .premio-year-nav{background:rgba(13,13,24,.97);border-color:rgba(100,130,255,.14)}
 html.dark .notfound-num{color:rgba(28,78,221,.32)}
 /* seções escuras por inline style — mantém escuras */
 html.dark section[style*="background:var(--preto)"]{background:#09090f !important}
 html.dark .page-hero[style*="background:var(--preto)"]{background:#09090f !important}
 html.dark section[style*="background:#111116"]{background:#0c0c14 !important}
-/* texto branco dentro de seções escuras — protege */
-html.dark .premio-nome{color:#e2e2ec !important}
 html.dark .noticia-destaque .noticia-titulo{color:#e2e2ec !important}
 /* qualquer elemento com color:var(--branco) inline em fundo escuro (ex: hero prêmios, section awards) */
 html.dark [style*="color:var(--branco)"]{color:#e2e2ec !important}
