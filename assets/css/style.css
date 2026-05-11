@@ -8,7 +8,7 @@ html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--branco);color:var(--preto);line-height:1.7}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--borda)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;background:rgba(255,255,255,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--borda);box-shadow:0 1px 20px rgba(0,0,0,.08)}
 .nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
 .nav-logo img{height:54px;width:auto;display:block}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -374,7 +374,7 @@ html.dark{
   --cinza-claro:#14141f;--borda:rgba(100,130,255,.14);
   --azul-claro:rgba(28,78,221,.17)
 }
-html.dark nav{background:rgba(13,13,24,.96);border-bottom-color:rgba(100,130,255,.14)}
+html.dark nav{background:rgba(13,13,24,.97);border-bottom-color:rgba(100,130,255,.14);box-shadow:0 1px 20px rgba(0,0,0,.35)}
 html.dark .prof-card{background:#16161f;border-color:rgba(100,130,255,.15)}
 html.dark .prof-card:hover{box-shadow:0 10px 36px rgba(0,0,0,.35)}
 html.dark .linha-card{background:#16161f;border-color:rgba(100,130,255,.15)}
