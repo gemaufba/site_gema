@@ -2,7 +2,6 @@ backend:
   name: github
   repo: Glebstrauss/site_gema
   branch: master
-  auth_type: pkce
   app_id: Ov23lisswKeYlP9Kp0C1
 
 # Onde as fotos são salvas no repositório
@@ -47,7 +46,7 @@ collections:
         name: "foto"
         widget: "image"
         required: false
-        allow_multiple: false
+        multiple: false
         hint: "Foto quadrada (ex: 400×400 px). Comprima em squoosh.app antes de subir. Máx: 300 KB."
 
       - label: "Iniciais (aparecem se não houver foto)"
