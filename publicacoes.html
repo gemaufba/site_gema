@@ -120,8 +120,8 @@ description: "Produção científica do GEMA em genética quantitativa, genômic
               {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}">{{ pub.qualis }}</span>{% endif %}
             </div>
             <div class="pub-actions">
-              {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener noreferrer">↗ DOI</a>{% endif %}
-              <button class="pub-citar" type="button" aria-label="Copiar citação">
+              {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener noreferrer" aria-label="Abrir no DOI (nova aba): {{ pub.titulo | truncate: 80 | escape }}">↗ DOI</a>{% endif %}
+              <button class="pub-citar" type="button" aria-label="Copiar citação: {{ pub.titulo | truncate: 80 | escape }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
                 <span class="pub-citar-label">Citar</span>
               </button>

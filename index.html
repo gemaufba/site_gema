@@ -115,7 +115,7 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
             {{ pub.periodico }}
             {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}">{{ pub.qualis }}</span>{% endif %}
           </div>
-          {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener noreferrer">↗ DOI</a>{% endif %}
+          {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener noreferrer" aria-label="Abrir no DOI (nova aba): {{ pub.titulo | truncate: 80 | escape }}">↗ DOI</a>{% endif %}
         </div>
       </div>
       {% endfor %}
