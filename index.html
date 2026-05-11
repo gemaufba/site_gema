@@ -103,17 +103,17 @@ description: "Grupo de pesquisa em genética quantitativa, genômica e melhorame
     <div class="divider"></div>
     <h2 class="section-title">Publicações Recentes</h2>
     <p class="section-desc">Artigos em periódicos nacionais e internacionais em genética quantitativa e melhoramento de equídeos.</p>
-    <div class="pub-list">
+    <div class="pub-list" role="list">
       {% assign pubs = site.data.publicacoes.items | sort: "ano" | reverse | limit: 4 %}
       {% for pub in pubs %}
-      <div class="pub-item">
+      <div class="pub-item" role="listitem">
         <div class="pub-year">{{ pub.ano }}</div>
         <div class="pub-body">
           <div class="pub-title">{{ pub.titulo }}</div>
           <div class="pub-authors">{{ pub.autores }}</div>
           <div class="pub-journal">
             {{ pub.periodico }}
-            {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}">{{ pub.qualis }}</span>{% endif %}
+            {% if pub.qualis != "" %}<span class="pub-badge pub-badge--{{ pub.qualis | downcase }}" aria-label="Qualis {{ pub.qualis }}">{{ pub.qualis }}</span>{% endif %}
           </div>
           {% if pub.doi != "" %}<a href="{{ pub.doi }}" class="pub-doi" target="_blank" rel="noopener noreferrer" aria-label="Abrir no DOI (nova aba): {{ pub.titulo | truncate: 80 | escape }}">↗ DOI</a>{% endif %}
         </div>

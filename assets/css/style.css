@@ -448,6 +448,8 @@ html.dark .pub-year-label{border-bottom-color:rgba(85,120,232,.3)}
 /* focus border do search + hover border do btn-outline */
 html.dark .pub-search:focus{border-color:var(--azul-mid)}
 html.dark .btn-outline:hover{border-color:var(--azul-mid);background:rgba(85,120,232,.1)}
+html.dark .nav-theme-btn:hover{background:rgba(85,120,232,.2);border-color:var(--azul-mid);color:var(--azul-mid)}
+html.dark .linha-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.4)}
 /* preserva outline branco em elementos sobre fundo azul sólido */
 html.dark .noticia-link-btn:focus-visible{outline-color:rgba(255,255,255,.8)}
 html.dark .btn-join:focus-visible{outline-color:rgba(255,255,255,.8)}
