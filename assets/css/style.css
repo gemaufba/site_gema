@@ -116,6 +116,7 @@ section{padding:6rem 3rem}
 .page-hero-qualis{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
 
 /* prêmios */
+section[id^="premio-"]{padding-top:2.5rem;padding-bottom:2.5rem}
 .premio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
 .premio-card{border:1px solid rgba(28,78,221,.3);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:border-color .2s,background .2s}
 .premio-card:hover{border-color:var(--azul-mid);background:rgba(28,78,221,.08)}
