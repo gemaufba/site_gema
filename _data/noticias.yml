@@ -1,62 +1,20 @@
 items:
-  - data: "Maio · 2025"
-    titulo: "Artigo sobre herdabilidade do Pêga aceito em periódico internacional"
-    texto: "O trabalho de estimação de parâmetros genéticos para escores de andamento, membros e paleta no jumento Pêga, via inferência bayesiana com BLUPF90+, foi aceito para publicação na revista Livestock Science. Um dos primeiros estudos genéticos de larga escala com a raça no Brasil."
-    link: "/site_gema/publicacoes.html"
-    destaque: true
-
-  - data: "Abril · 2025"
-    titulo: "SBMA 2025: GEMA apresenta três trabalhos em Salvador"
-    texto: "O grupo apresentou trabalhos sobre herdabilidade de escores morfológicos, diversidade genética em asininos e seleção genômica no Simpósio Brasileiro de Melhoramento Animal, realizado em Salvador, BA."
-    link: ""
-    destaque: false
-
-  - data: "Março · 2025"
-    titulo: "Novo módulo de genômica disponível no curso aberto"
-    texto: "O módulo Introdução à Genômica Aplicada foi adicionado ao curso aberto do GEMA. O conteúdo abrange análise de SNP, GWAS e seleção genômica com exemplos práticos em R."
-    link: "https://glebstrauss.github.io/gema/"
-    destaque: false
-
-  - data: "Janeiro · 2025"
-    titulo: "Início do projeto de caracterização genômica do Campolina"
-    texto: "O GEMA iniciou parceria com criadores de cavalos Campolina para caracterização genômica da raça, com foco em diversidade alélica, endogamia e parâmetros genéticos para características de andamento."
-    link: ""
-    destaque: false
-
-  - data: "Dezembro · 2024"
-    titulo: "Artigo sobre morfometria do Pêga publicado no ABMVZ"
-    texto: "O artigo Morphometric characterization of Pêga donkeys using principal component analysis foi publicado no Arquivo Brasileiro de Medicina Veterinária e Zootecnia."
-    link: "/site_gema/publicacoes.html"
-    destaque: false
-
-  - data: "Outubro · 2024"
-    titulo: "GEMA premiado no ZOOTEC 2024"
-    texto: "O trabalho sobre herdabilidade de escores de andamento no jumento Pêga recebeu o prêmio de Melhor Trabalho em Genética Animal no Congresso Brasileiro de Zootecnia, em Fortaleza, CE."
-    link: "/site_gema/premios.html"
-    destaque: false
-
-  - data: "Agosto · 2024"
-    titulo: "Parceria com ABCJP para banco de dados genéticos"
-    texto: "O grupo firmou parceria com a Associação Brasileira dos Criadores do Jumento Pêga para construção de um banco de dados genéticos e fenotípicos visando programas de avaliação genética da raça."
-    link: ""
-    destaque: false
-
   - data: "2024"
     titulo: "Docentes do GEMA têm bolsas de Produtividade CNPq renovadas"
     texto: "Raphael Bermal Costa e Gregório Camargo tiveram suas bolsas de Produtividade em Pesquisa do CNPq renovadas (níveis E e D, respectivamente). Luís Fernando Batista Pinto integra o grupo como bolsista D de editais anteriores. Um reconhecimento à excelência em Genética e Melhoramento Animal do PPGZ/UFBA."
     link: ""
+    destaque: true
+
+  - data: "Jan · 2024"
+    titulo: "Prof. Gregório Camargo é entrevistado no Programa Terraviva DBO"
+    texto: "O Prof. Gregório Camargo foi ao ar no Programa Terraviva DBO (Canal Terraviva) para falar sobre 'Redução de custos ao se fazer seleção para mocho'. A entrevista está disponível no YouTube do Canal Terraviva."
+    link: "https://www.youtube.com/@CanalTerravivaYT"
     destaque: false
 
   - data: "2023"
     titulo: "Projeto sobre genômica do Campolina aprovado no CNPq"
     texto: "O projeto 'Utilização de informações genômicas no estudo de características morfométricas e de tamanho corporal em equinos da raça Campolina', coordenado pelo Prof. Raphael Bermal Costa, foi aprovado na Chamada CNPq/MCTI Nº 10/2023. A proposta reúne dez pesquisadores-doutores de seis instituições nacionais e internacionais."
     link: ""
-    destaque: false
-
-  - data: "Jan · 2024"
-    titulo: "Prof. Gregório Camargo é entrevistado no Programa Terraviva DBO"
-    texto: "O Prof. Gregório Camargo foi ao ar no Programa Terraviva DBO (Canal Terraviva) para falar sobre 'Redução de custos ao se fazer seleção para mocho'. A entrevista está disponível no YouTube do Canal Terraviva."
-    link: "https://www.youtube.com/@CanalTerravivaYT"
     destaque: false
 
   - data: "2023"
