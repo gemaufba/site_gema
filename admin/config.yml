@@ -5,8 +5,8 @@ backend:
 
 # Onde as fotos são salvas no repositório
 media_folder: "assets/img/professores"
-# URL pública das fotos (com o caminho do GitHub Pages)
-public_folder: "/site_gema/assets/img/professores"
+# URL pública das fotos (sem o baseurl — o relative_url do Jekyll adiciona)
+public_folder: "/assets/img/professores"
 
 locale: pt
 
