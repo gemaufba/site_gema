@@ -7,9 +7,8 @@ avatar: GS
 descricao: Mestrando sob orientação do Prof. Dr. Raphael Bermal Costa.
 tags:
   - Genética Quantitativa
-  - Genômica
-lattes: ''
-email: ''
+lattes: http://lattes.cnpq.br/4242389048699660
+email: gleb.strauss@ufba.br
 ordem: 5
 layout: null
 ---
