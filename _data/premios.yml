@@ -1,66 +1,31 @@
 items:
-  - nome: "Melhor Trabalho — 1º Lugar (Artigo Original)"
-    entidade: "IV Workshop Internacional Jumentos do Brasil"
+  - nome: Melhor Trabalho — 1º Lugar (Artigo Original)
+    entidade: IV Workshop Internacional Jumentos do Brasil
     ano: 2026
-    icone: "🥇"
-    descricao: "Premiado: Gleb Strauss Borges Junqueira (Mestrando). 1º lugar na categoria Artigo Original."
-
-  - nome: "Scherago International Student Travel Grant"
-    entidade: "Scherago International"
+    icone: 🥇
+    descricao: 'Premiado: Gleb Strauss Borges Junqueira (Mestrando). 1º lugar na categoria Artigo Original.'
+  - nome: Scherago International Student Travel Grant
+    entidade: Scherago International
     ano: 2024
-    icone: "🌍"
-    descricao: "Premiada: Milena Aparecida Ferreira Campos (Doutoranda). Trabalho: Genome-wide association study for skin depigmentation in Nellore cattle."
-
-  - nome: "Menção Honrosa — Prêmio UFBA de Teses e Dissertações 2023"
-    entidade: "Universidade Federal da Bahia"
+    icone: 🌍
+    descricao: 'Premiada: Milena Aparecida Ferreira Campos (Doutoranda). Trabalho: Genome-wide association study for skin depigmentation in Nellore cattle.'
+  - nome: Menção Honrosa — Prêmio UFBA de Teses e Dissertações 2023
+    entidade: Universidade Federal da Bahia
     ano: 2023
-    icone: "🎖️"
-    descricao: "Premiado: Dr. Henrique Alberto Mulim. Trabalho: Caracterização de corridas de homozigose, heterozigose e análise da diversidade genômica em populações de bovinos."
-
-  - nome: "Menção Honrosa — Prêmio Capes de Tese (Edição 2024)"
-    entidade: "CAPES"
+    icone: 🎖️
+    descricao: 'Premiado: Dr. Henrique Alberto Mulim. Trabalho: Caracterização de corridas de homozigose, heterozigose e análise da diversidade genômica em populações de bovinos.'
+  - nome: Menção Honrosa — Prêmio Capes de Tese (Edição 2024)
+    entidade: CAPES
     ano: 2024
-    icone: "🎖️"
-    descricao: "Premiado: Dr. Henrique Alberto Mulim. Trabalho: Caracterização de corridas de homozigose, heterozigose e análise da diversidade genômica em populações de bovinos."
-
-  - nome: "Menção Honrosa — Prêmio UFBA 2024 (Dissertação)"
-    entidade: "Universidade Federal da Bahia"
+    icone: 🎖️
+    descricao: 'Premiado: Dr. Henrique Alberto Mulim. Trabalho: Caracterização de corridas de homozigose, heterozigose e análise da diversidade genômica em populações de bovinos.'
+  - nome: Menção Honrosa — Prêmio UFBA 2024 (Dissertação)
+    entidade: Universidade Federal da Bahia
     ano: 2024
-    icone: "🎖️"
-    descricao: "Premiado: Silel Vinícius Simões Andrade Maciel (Mestrando). Categoria Dissertação."
-
-  - nome: "Melhor Trabalho em Genética Animal"
-    entidade: "Congresso Brasileiro de Zootecnia (ZOOTEC)"
-    ano: 2024
-    icone: "🏆"
-    descricao: "Herdabilidade de escores de andamento no jumento Pêga via inferência bayesiana com BLUPF90+. Destaque entre mais de 200 trabalhos submetidos na área de genética."
-
-  - nome: "Destaque em Produção Científica"
-    entidade: "EMEVZ · UFBA"
-    ano: 2024
-    icone: "🎖️"
-    descricao: "Reconhecimento pela publicação em periódicos de alto impacto e pela contribuição à conservação de raças nativas equinas e asininas brasileiras."
-
-  - nome: "Menção Honrosa — Pôster"
-    entidade: "Simpósio Brasileiro de Melhoramento Animal (SBMA)"
-    ano: 2023
-    icone: "📌"
-    descricao: "Diversidade genética e endogamia em raças asininas nativas do Nordeste brasileiro. Trabalho premiado na categoria Recursos Genéticos Animais."
-
-  - nome: "Melhor Apresentação Oral"
-    entidade: "Reunião Anual da SBG"
-    ano: 2022
-    icone: "🥇"
-    descricao: "Estimativas bayesianas de parâmetros genéticos para medidas corporais no jumento Pêga. Sociedade Brasileira de Genética, área de Genética de Populações e Evolução."
-
-  - nome: "Bolsa CNPq — Produtividade em Pesquisa"
-    entidade: "CNPq · Brasil"
+    icone: 🎖️
+    descricao: 'Premiado: Silel Vinícius Simões Andrade Maciel (Mestrando). Categoria Dissertação.'
+  - nome: Bolsa CNPq — Produtividade em Pesquisa
+    entidade: CNPq · Brasil
     ano: 2021
-    icone: "📜"
-    descricao: "Concessão de bolsa de produtividade em pesquisa para desenvolvimento de metodologias de avaliação genômica aplicada a equídeos localmente adaptados."
-
-  - nome: "Destaque PPGZ/UFBA"
-    entidade: "Programa de Pós-Graduação em Zootecnia · UFBA"
-    ano: 2021
-    icone: "🎗️"
-    descricao: "Prêmio concedido à dissertação com maior impacto científico e social defendida no período, na linha de melhoramento e reprodução animal."
+    icone: 📜
+    descricao: Concessão de bolsa de produtividade em pesquisa para desenvolvimento de metodologias de avaliação genômica aplicada a equídeos localmente adaptados.
