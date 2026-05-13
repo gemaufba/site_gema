@@ -106,10 +106,12 @@ section{padding:6rem 3rem}
 .pub-badge--q4{background:rgba(150,150,150,.15);color:#555}
 
 /* navegação por ano */
-.pub-year-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
-.pub-year-btn{font-size:.8rem;font-weight:500;color:var(--azul);border:1px solid rgba(28,78,221,.25);padding:.3rem .9rem;border-radius:100px;text-decoration:none;transition:background .15s,border-color .2s}
+.pub-year-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;position:sticky;top:68px;z-index:80;background:var(--branco);padding:.75rem 0;border-bottom:1px solid var(--borda);margin-left:-3rem;margin-right:-3rem;padding-left:3rem;padding-right:3rem}
+.pub-year-btn{font-size:.8rem;font-weight:500;color:var(--azul);border:1px solid rgba(28,78,221,.25);padding:.3rem .9rem;border-radius:100px;text-decoration:none;transition:background .15s,border-color .2s;white-space:nowrap}
 .pub-year-btn:hover{background:var(--azul-claro);border-color:var(--azul)}
-.pub-year-group{scroll-margin-top:84px}
+.pub-year-group{scroll-margin-top:130px}
+.pub-year-label{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--azul);margin-bottom:.6rem;padding-top:.5rem}
+.pub-year-label::after{content:'';display:block;width:28px;height:2px;background:var(--azul);margin-top:.5rem;margin-bottom:1rem}
 
 /* contagem na hero de publicações */
 .page-hero-count{font-size:.8rem;color:var(--azul);font-weight:500;margin-top:.75rem;letter-spacing:.04em}
@@ -440,12 +442,11 @@ body.nav-open .nav-hamburger span:nth-child(3){transform:translateY(-7px) rotate
   section{padding:4rem 1.25rem}
   #inicio{padding:7rem 1.25rem 3rem}
   .page-hero{padding:5.5rem 1.25rem 2.5rem}
-  /* statsbar horizontal no mobile: 3 colunas iguais */
-  .premios-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:.25rem 0}
-  .psi{padding:.75rem .5rem;text-align:center;border-right:1px solid var(--borda)}
-  .psi:last-of-type{border-right:none}
-  .psi-num{font-size:1.2rem}
-  .psi-div{display:none}
+  /* statsbar horizontal no mobile: mantém em linha, reduz padding */
+  .premios-stats{flex-direction:row;flex-wrap:wrap;padding:.25rem 0;gap:0}
+  .psi{padding:.6rem 1.25rem .6rem 0;text-align:left}
+  .psi-num{font-size:1.25rem}
+  .psi-div{width:1px;height:1.8rem;margin-right:1.25rem}
   .hero-stats{gap:1.5rem}
   .noticias-all{grid-template-columns:1fr}
   .premio-grid{grid-template-columns:1fr;gap:1rem}
@@ -453,8 +454,17 @@ body.nav-open .nav-hamburger span:nth-child(3){transform:translateY(-7px) rotate
   section[id^="premio-"]{padding-top:2rem;padding-bottom:2rem;padding-left:1.25rem;padding-right:1.25rem}
   .prof-grid{grid-template-columns:1fr}
   .linhas-grid{grid-template-columns:1fr}
-  .pub-item{flex-direction:column;gap:.5rem}
+  .pub-item{flex-direction:column;gap:.4rem;padding:1.25rem .75rem}
   .pub-year{min-width:unset}
+  /* year-nav pub: scroll horizontal, sem barra */
+  .pub-year-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-left:-1.25rem;margin-right:-1.25rem;padding-left:1.25rem;padding-right:1.25rem;gap:.4rem;margin-bottom:1.25rem}
+  .pub-year-nav::-webkit-scrollbar{display:none}
+  /* filter bar empilhada no mobile */
+  .pub-filter-bar{padding:.9rem 1rem;flex-direction:column;align-items:stretch;gap:.6rem}
+  .pub-search-wrap{min-width:unset}
+  .pub-print-btn{align-self:flex-end}
+  /* scroll-margin compensando nav + year-nav sticky */
+  .pub-year-group{scroll-margin-top:130px}
 }
 
 /* ── barra de stats de publicações ──────────────────────────────────────── */
