@@ -2,7 +2,7 @@
 nome: Prof. Dr. Caio Victor D. Carvalho
 cargo: Professor · EMEVZ/UFBA
 tipo: docente
-foto: ''
+foto: /assets/img/professores/5.png
 avatar: CC
 descricao: Genética da conservação de animais domésticos.
 tags:
