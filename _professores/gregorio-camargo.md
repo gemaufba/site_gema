@@ -1,15 +1,15 @@
 ---
-layout: null
-nome: "Prof. Dr. Gregório M. F. Camargo"
-cargo: "Professor · EMEVZ/UFBA"
-tipo: "docente"
-avatar: "GC"
-foto: ""
-descricao: "Genética molecular aplicada ao melhoramento animal."
+nome: Prof. Dr. Gregório M. F. Camargo
+cargo: Professor · EMEVZ/UFBA
+tipo: docente
+foto: ''
+avatar: GC
+descricao: Genética molecular aplicada ao melhoramento animal.
 tags:
   - Genética Molecular
   - Melhoramento Animal
-lattes: ""
-email: ""
+lattes: http://lattes.cnpq.br/7156553324874491
+email: gregorio.camargo@ufba.br
 ordem: 2
+layout: null
 ---
