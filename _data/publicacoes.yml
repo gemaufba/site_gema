@@ -1,63 +1,35 @@
 items:
-  - ano: 2025
-    titulo: "Heritability estimates for gait, limb and shoulder scores in Pêga donkeys using Bayesian inference"
-    autores: "Strauss, G.; Silva, M.; Ferreira, J.; Costa, A. et al."
-    periodico: "Livestock Science"
-    qualis: "Q1"
-    doi: ""
-
-  - ano: 2025
-    titulo: "Genomic selection strategies for Nordestino donkey conservation programs"
-    autores: "Ferreira, J.; Lima, R.; Strauss, G. et al."
-    periodico: "Small Ruminant Research"
-    qualis: "Q2"
-    doi: ""
-
-  - ano: 2024
-    titulo: "Morphometric characterization of Pêga donkeys using principal component analysis"
-    autores: "Strauss, G.; Costa, A.; Ferreira, J. et al."
-    periodico: "Arquivo Brasileiro de Medicina Veterinária e Zootecnia"
-    qualis: "Q2"
-    doi: ""
-
-  - ano: 2024
-    titulo: "Genetic parameters for reproductive traits in Mangalarga Marchador horses"
-    autores: "Silva, M.; Costa, A.; Strauss, G. et al."
-    periodico: "Genetics and Molecular Biology"
-    qualis: "Q1"
-    doi: ""
-
-  - ano: 2024
-    titulo: "Variance components for morphometric traits in Campolina horses via REML"
-    autores: "Costa, A.; Strauss, G.; Silva, M. et al."
-    periodico: "Ciência Rural"
-    qualis: "Q2"
-    doi: ""
-
-  - ano: 2023
-    titulo: "Inbreeding and genetic diversity in Brazilian native donkey breeds"
-    autores: "Ferreira, J.; Strauss, G.; Lima, R. et al."
-    periodico: "Journal of Animal Breeding and Genetics"
-    qualis: "Q1"
-    doi: ""
-
-  - ano: 2023
-    titulo: "Population structure and effective population size in Nordestino donkeys"
-    autores: "Lima, R.; Ferreira, J.; Strauss, G. et al."
+  - ano: 2026
+    titulo: "Influence of MC1R Gene Variants on Coat Color of Indicine Cattle Breeds"
+    autores: "Maciel SVS, Oliveira IPP, Senes BB, Santana CJS, Alves JS, Silva EA, Franco FO, Silva BCF, Cairo FC, Vercesi-Filho AE, Costa RB, Camargo GMF"
     periodico: "Animal Genetics"
-    qualis: "Q1"
-    doi: ""
+    qualis: ""
+    doi: "https://doi.org/10.1002/age.70113"
 
-  - ano: 2022
-    titulo: "Genetic trends for performance traits in Brazilian Mangalarga Marchador horses"
-    autores: "Silva, M.; Ferreira, J. et al."
-    periodico: "Revista Brasileira de Zootecnia"
-    qualis: "Q2"
-    doi: ""
+  - ano: 2026
+    titulo: "Lack of association between the coding region of the ASIP gene and coat color in donkeys"
+    autores: "Rocha VCP, Santana CJS, Lima-Júnior JWR, Senes BB, Maciel SVSA, Oliveira IPP, Costa RB, Alves JS, Camargo GMF"
+    periodico: "Frontiers in Animal Science"
+    qualis: ""
+    doi: "https://doi.org/10.3389/fanim.2026.1794789"
 
-  - ano: 2022
-    titulo: "Bayesian estimates of genetic parameters for body measurements in Pêga donkeys"
-    autores: "Strauss, G.; Silva, M.; Ferreira, J. et al."
-    periodico: "Livestock Science"
-    qualis: "Q1"
-    doi: ""
+  - ano: 2025
+    titulo: "Genome-Wide Association Study of Morphological Defects in Nellore Cattle Using a Binary Trait Framework"
+    autores: "Campos MAF, Rojas de Oliveira H, Mulim HA, Oliveira EdS, Fonseca PAdS, Camargo GMF, Costa RB"
+    periodico: "Genes"
+    qualis: ""
+    doi: "https://doi.org/10.3390/genes16101204"
+
+  - ano: 2025
+    titulo: "Variability of PRDM9 in buffaloes"
+    autores: "Santana LGR, Alves JS, Feitosa FLB, Rocha VCP, Tonhati H, Costa RB, Camargo GMF"
+    periodico: "Frontiers in Genetics"
+    qualis: ""
+    doi: "https://doi.org/10.3389/fgene.2024.1479287"
+
+  - ano: 2021
+    titulo: "Influence of coat color on genetic parameter estimates in horses"
+    autores: "Junqueira GSB, Solar Diaz IDP, Cruz VAR, Oliveira CAA, Godoi FN, Camargo GMF, Costa RB"
+    periodico: "Journal of Applied Genetics"
+    qualis: ""
+    doi: "https://doi.org/10.1007/s13353-021-00616-5"
