@@ -1,8 +1,8 @@
 title: GEMA
 full_title: "GEMA — Grupo de Estudos em Melhoramento Animal"
 description: "Grupo de pesquisa em genética quantitativa, genômica e melhoramento de equídeos brasileiros. EMEVZ · UFBA · Salvador, BA"
-url: "https://glebstrauss.github.io"
-baseurl: "/site_gema"
+url: "https://gema-ufba.github.io"
+baseurl: "/gemaufba"
 author: "GEMA/UFBA"
 lang: pt-BR
 timezone: "America/Bahia"

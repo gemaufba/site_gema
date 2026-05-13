@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Glebstrauss/site_gema
+  repo: gema-ufba/gemaufba
   branch: master
 
 # Onde as fotos são salvas no repositório
